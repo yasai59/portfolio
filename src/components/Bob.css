@@ -1,0 +1,42 @@
+.bob-shadow {
+  width: 700px;
+  height: 700px;
+  border: 2px solid #fafafa;
+  background-color: #141414;
+  position: absolute;
+  top: 57px;
+  left: -62px;
+  z-index: -100;
+}
+
+.bob {
+  width: 700px;
+  height: 700px;
+  border: 2px solid #fafafa;
+  background: #141414;
+  position: relative;
+}
+
+
+.line {
+  width: 85px;
+  background: #fafafa;
+  height: 2px;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.line-1 {
+  left: -73px;
+  top: 27px;
+}
+
+.line-2 {
+  bottom: -30px;
+  left: -73px;
+}
+
+.line-3 {
+  bottom: -30px;
+  right: -14px;
+}
