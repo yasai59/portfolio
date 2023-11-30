@@ -1,0 +1,28 @@
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.eye {
+  width: 85px;
+  height: 85px;
+  background: var(--light);
+  border-radius: 50%;
+  align-items: center;
+  position: relative;
+}
+
+.pupil {
+  width: 40px;
+  height: 40px;
+  background: var(--dark);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 

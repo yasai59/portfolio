@@ -1,8 +1,10 @@
+@import url('../../public/fonts/fonts.css');
+
 .bob-shadow {
   width: 700px;
   height: 700px;
-  border: 2px solid #fafafa;
-  background-color: #141414;
+  border: 2px solid var(--light);
+  background-color: var(--dark);
   position: absolute;
   top: 57px;
   left: -62px;
@@ -12,15 +14,15 @@
 .bob {
   width: 700px;
   height: 700px;
-  border: 2px solid #fafafa;
-  background: #141414;
+  border: 2px solid var(--light);
+  background: var(--dark);
   position: relative;
 }
 
 
 .line {
   width: 85px;
-  background: #fafafa;
+  background: var(--light);
   height: 2px;
   position: absolute;
   transform: rotate(-45deg);
@@ -39,4 +41,19 @@
 .line-3 {
   bottom: -30px;
   right: -14px;
+}
+
+.fill {
+  color: var(--light);
+  -webkit-text-stroke: 2px var(--light);
+}
+
+.void {
+  -webkit-text-stroke: 2px var(--light);
+}
+
+.content {
+  font-family: 'Anton';
+  padding-left: 10px;
+  line-height: 1.1;
 }
