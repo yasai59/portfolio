@@ -1,6 +1,6 @@
 import React from "react";
 import "./Bob.css";
-import { Eyes } from "./eyes";
+import { Eyes } from "./Eyes";
 
 export const Bob = () => {
   return (

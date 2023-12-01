@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Anton';
-  src: url('./Anton-Regular.ttf');
+  src: url('/fonts/Anton-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Handjet';
-  src: url('./Handjet.ttf');
+  src: url('/fonts/Handjet.ttf');
 }
 
 @font-face {
   font-family: 'Silkscreen';
-  src: url('./Silkscreen-Regular.ttf');
+  src: url('/fonts/Silkscreen-Regular.ttf');
 }

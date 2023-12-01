@@ -1,5 +1,5 @@
 import React from "react";
-import { Bob } from "../components/Bob";
+import { Bob } from "../components/Bob/Bob";
 
 export const FirstSection = () => {
   return (
