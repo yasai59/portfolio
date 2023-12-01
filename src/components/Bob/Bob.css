@@ -52,7 +52,7 @@
   -webkit-text-stroke: 2px var(--light);
 }
 
-.content {
+.titles {
   font-family: 'Anton';
   padding-left: 10px;
   line-height: 1.1;
