@@ -15,7 +15,7 @@ export const LangProvider = ({ children }) => {
   // funcion para cambiar el idioma
   const changeLang = (pos) => {
     const lang = langList[pos];
-    localStorage.setItem("lang", lang);
+    localStorage.setItem("lang", JSON.stringify(lang));
     setLang(lang);
   };
 

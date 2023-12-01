@@ -12,3 +12,8 @@
   font-family: 'Silkscreen';
   src: url('/fonts/Silkscreen-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'Mintsoda';
+  src: url('/fonts/Mintsoda.ttf');
+}
