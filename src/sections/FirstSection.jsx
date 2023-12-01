@@ -11,7 +11,7 @@ export const FirstSection = () => {
       </div>
       {/* flecha para indicar el scroll */}
       <div
-        className="absolute bottom-10 animate-bounce"
+        className="absolute bottom-10 "
         style={{
           left: "50%",
           transform: "translateX(-50%)",

@@ -57,9 +57,11 @@ export const Eyes = () => {
   return (
     <div className="eyes" ref={eyes}>
       <div className={`eye ${lang.code == "ja" ? "eye-ja" : ""}`}>
+        <div className="background"></div>
         <div className="pupil"></div>
       </div>
       <div className={`eye ${lang.code == "ja" ? "eye-ja" : ""}`}>
+        <div className="background"></div>
         <div className="pupil"></div>
       </div>
     </div>

@@ -34,7 +34,7 @@ export const LangSelector = () => {
   };
 
   return (
-    <div className="h-32 w-full flex items-center language">
+    <div className="w-full flex items-center language mt-5 mb-5">
       <div
         className="container flex justify-end relative border-collapse"
         tabIndex="0"
