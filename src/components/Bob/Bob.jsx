@@ -14,6 +14,7 @@ const Section = ({ index }) => {
       </h1>
     </div>,
     // seccion 1 - Tecnologias
+
     // seccion 2 - Sobre mi
     // seccion 3 - Proyectos
     // seccion 4 - Contacto

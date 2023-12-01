@@ -50,6 +50,7 @@
 
 .void {
   -webkit-text-stroke: 2px var(--light);
+  color: transparent;
 }
 
 .titles {

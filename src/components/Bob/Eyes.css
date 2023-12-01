@@ -16,6 +16,11 @@
   position: relative;
 }
 
+.eye-ja {
+  /* make the eye look very chinese */
+  clip-path: ellipse(50% 23% at 50% 50%);
+}
+
 .pupil {
   width: 40px;
   height: 40px;

@@ -5,7 +5,7 @@ import "./LangSelector.css";
 
 const SelectedLang = ({ lang }) => {
   return (
-    <div className="text-light self-end text-xl border-light border-2 w-[150px] h-[45px] flex p-[5px] items-center justify-between">
+    <div className="text-light self-end text-xl border-light border-2 w-[150px] h-[45px] flex p-[5px] items-center justify-between cursor-pointer">
       <img src="/assets/www.png" alt="language-icon" className="w-[30px]" />
       <p>{lang.name}</p>
       <img src="/assets/arrowDown.png" className="w-[30px]" />
@@ -52,7 +52,7 @@ export const LangSelector = () => {
           {langList.map((lang, index) => (
             <div
               key={index}
-              className="lang-selector-item w-[150px] h-[45px] flex items-center ps-[10px] border-2 border-white my-[-2px]"
+              className="lang-selector-item w-[150px] h-[45px] flex items-center ps-[10px] border-2 border-white my-[-2px] cursor-pointer"
               onClick={() => handleClick(index)}
             >
               {lang.name}

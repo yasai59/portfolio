@@ -2,9 +2,13 @@ import { useRef } from "react";
 
 import "./Eyes.css";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { LangContext } from "../../context/LangContext";
 
 export const Eyes = () => {
   const eyes = useRef(null);
+
+  const { lang } = useContext(LangContext);
 
   const onMouseMove = (e) => {
     const { clientX: x, clientY: y } = e;
@@ -52,10 +56,10 @@ export const Eyes = () => {
 
   return (
     <div className="eyes" ref={eyes}>
-      <div className="eye">
+      <div className={`eye ${lang.code == "ja" ? "eye-ja" : ""}`}>
         <div className="pupil"></div>
       </div>
-      <div className="eye">
+      <div className={`eye ${lang.code == "ja" ? "eye-ja" : ""}`}>
         <div className="pupil"></div>
       </div>
     </div>
