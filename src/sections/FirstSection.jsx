@@ -4,7 +4,7 @@ import { LangSelector } from "../components/langSelector/LangSelector";
 
 export const FirstSection = () => {
   return (
-    <section id="start" className="h-screen relative">
+    <section id="start" className="h-screen relative section snap-center">
       <div className="flex justify-center items-center flex-col">
         <LangSelector />
         <Bob />
