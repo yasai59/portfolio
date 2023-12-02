@@ -20,7 +20,7 @@ export const LangSelector = () => {
   const div = useRef(null);
 
   const handleFocus = () => {
-    setVisible(true);
+    setVisible((value) => !value);
   };
 
   const handleBlur = () => {
