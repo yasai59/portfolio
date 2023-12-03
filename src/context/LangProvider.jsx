@@ -12,13 +12,14 @@ export const LangProvider = ({ children }) => {
       localStorage.setItem("lang", JSON.stringify(langList[0]));
     }
   }, []);
+
   // funcion para cambiar el idioma
   const changeLang = (pos) => {
     const lang = langList[pos];
     localStorage.setItem("lang", JSON.stringify(lang));
     setLang(lang);
   };
-
+  // lista de idiomas
   const langList = [
     {
       code: "en",
@@ -29,9 +30,14 @@ export const LangProvider = ({ children }) => {
       name: "日本語",
     },
   ];
+
+  // seccion activa (no deberia estar aqui pero no queria crear otro contexto separado para esto)
+  const [activeSection, setActiveSection] = useState(0);
   // se provee el contexto
   return (
-    <LangContext.Provider value={{ lang, changeLang, langList }}>
+    <LangContext.Provider
+      value={{ lang, changeLang, langList, activeSection, setActiveSection }}
+    >
       {children}
     </LangContext.Provider>
   );
