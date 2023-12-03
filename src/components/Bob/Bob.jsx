@@ -25,13 +25,15 @@ const Section = ({ index }) => {
 
 export const Bob = () => {
   return (
-    <div className="bob">
-      <Section index={0} />
-      <Eyes />
-      <div className="line line-1"></div>
-      <div className="line line-2"></div>
-      <div className="line line-3"></div>
-      <div className="bob-shadow"></div>
+    <div className="bob-wraper">
+      <div className="bob">
+        <Section index={0} />
+        <Eyes />
+        <div className="line line-1"></div>
+        <div className="line line-2"></div>
+        <div className="line line-3"></div>
+        <div className="bob-shadow"></div>
+      </div>
     </div>
   );
 };

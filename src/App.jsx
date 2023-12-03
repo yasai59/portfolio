@@ -4,6 +4,7 @@ import { Technologies } from "./sections/Technologies";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { LangContext } from "./context/LangContext";
+import { Bob } from "./components/Bob/Bob";
 
 function App() {
   const all = useRef(null);
@@ -40,13 +41,16 @@ function App() {
   }, []);
 
   return (
-    <div
-      className="relative w-full h-screen overflow-auto snap-y snap-mandatory"
-      ref={all}
-    >
-      <FirstSection />
-      <Technologies />
-    </div>
+    <>
+      <div
+        className="relative w-full h-screen overflow-auto snap-y snap-mandatory"
+        ref={all}
+      >
+        <Bob />
+        <FirstSection />
+        <Technologies />
+      </div>
+    </>
   );
 }
 

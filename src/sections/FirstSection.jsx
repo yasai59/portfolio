@@ -1,5 +1,4 @@
 import React from "react";
-import { Bob } from "../components/Bob/Bob";
 import { LangSelector } from "../components/langSelector/LangSelector";
 
 export const FirstSection = () => {
@@ -7,7 +6,6 @@ export const FirstSection = () => {
     <section id="start" className="h-screen relative section snap-center">
       <div className="flex justify-center items-center flex-col">
         <LangSelector />
-        <Bob />
       </div>
       {/* flecha para indicar el scroll */}
       <div

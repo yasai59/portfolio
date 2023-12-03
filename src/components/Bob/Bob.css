@@ -11,6 +11,15 @@
   z-index: -100;
 }
 
+.bob-wraper {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 100px;
+  left: 50vw;
+  transform: translateX(-50%);
+}
+
 .bob {
   width: 700px;
   height: 700px;
