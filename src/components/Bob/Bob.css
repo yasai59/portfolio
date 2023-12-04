@@ -15,9 +15,10 @@
   width: 700px;
   height: 700px;
   position: absolute;
-  top: 100px;
+  top: 50vh;
   left: 50vw;
-  transform: translateX(-50%);
+  transform: translate(-50%,-50%);
+  transition: all .4s ease-out;
 }
 
 .bob {

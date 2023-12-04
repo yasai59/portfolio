@@ -8,7 +8,7 @@ import { LangContext } from "../../context/LangContext";
 export const Eyes = () => {
   const eyes = useRef(null);
 
-  const { lang } = useContext(LangContext);
+  const { lang, activeSection } = useContext(LangContext);
 
   const onMouseMove = (e) => {
     const { clientX: x, clientY: y } = e;
@@ -52,7 +52,26 @@ export const Eyes = () => {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    const width = eyes.current.getBoundingClientRect().width;
+
+    const positions = [
+      { top: "20px", right: "40px" },
+      {
+        top: "20px",
+        right: `${350 - width / 2}px`,
+      },
+    ];
+
+    const { top, right } = positions[activeSection];
+
+    // console log the width of the eyes
+
+    eyes.current.style.top = top;
+    eyes.current.style.right = right;
+  }, [activeSection]);
 
   return (
     <div className="eyes" ref={eyes}>
