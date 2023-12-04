@@ -25,6 +25,12 @@ const Section = ({ index }) => {
       </h1>
     </div>,
     // seccion 2 - Sobre mi
+    <div className="titles grid place-items-center h-full w-full">
+      <h1 className="text-[160px]">
+        <span className="void">ABOUT</span> <br />
+        <span className="fill ms-[300px]">ME</span>
+      </h1>
+    </div>,
     // seccion 3 - Proyectos
     // seccion 4 - Contacto
   ];
@@ -41,7 +47,7 @@ export const Bob = () => {
     const height = window.innerHeight;
     const width = window.innerWidth;
 
-    const left = ["50vw", `${width - 500}px`];
+    const left = ["50vw", `${width - 500}px`, "700px"];
 
     bobWrapper.current.style.top = `${height * activeSection + height / 2}px`;
     bobWrapper.current.style.left = left[activeSection];

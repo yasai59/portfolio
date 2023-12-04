@@ -17,3 +17,7 @@
   font-family: 'Mintsoda';
   src: url('/fonts/Mintsoda.ttf');
 }
+
+.pixel {
+  font-family: 'Handjet', 'Mintsoda';
+}

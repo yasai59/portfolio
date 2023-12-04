@@ -58,11 +58,12 @@ export const Eyes = () => {
     const width = eyes.current.getBoundingClientRect().width;
 
     const positions = [
-      { top: "20px", right: "40px" },
+      { top: "40px", right: "40px" },
       {
-        top: "20px",
+        top: "40px",
         right: `${350 - width / 2}px`,
       },
+      { top: "40px", right: `${550 - width / 2}px` },
     ];
 
     const { top, right } = positions[activeSection];

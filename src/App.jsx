@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { LangContext } from "./context/LangContext";
 import { Bob } from "./components/Bob/Bob";
+import { AboutMe } from "./sections/AboutMe";
 
 function App() {
   const all = useRef(null);
@@ -49,6 +50,7 @@ function App() {
         <Bob />
         <FirstSection />
         <Technologies />
+        <AboutMe />
       </div>
     </>
   );
