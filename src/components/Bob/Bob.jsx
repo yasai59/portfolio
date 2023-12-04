@@ -91,7 +91,9 @@ export const Bob = () => {
 
     const left = ["50vw", `${width - 500}px`, "700px"];
 
-    bobWrapper.current.style.top = `${height * activeSection + height / 2}px`;
+    bobWrapper.current.style.top = `${
+      height * activeSection + height / 2 - 50
+    }px`;
     bobWrapper.current.style.left = left[activeSection] || "50vw";
 
     if (activeSection === 3) {
