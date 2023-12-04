@@ -64,11 +64,13 @@ export const Eyes = () => {
         right: `${350 - width / 2}px`,
       },
       { top: "40px", right: `${550 - width / 2}px` },
+      {
+        top: "40px",
+        right: `${450 - width / 2}px`,
+      },
     ];
 
-    const { top, right } = positions[activeSection];
-
-    // console log the width of the eyes
+    const { top, right } = positions[activeSection] || positions[0];
 
     eyes.current.style.top = top;
     eyes.current.style.right = right;

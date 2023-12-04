@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { LangContext } from "./context/LangContext";
 import { Bob } from "./components/Bob/Bob";
 import { AboutMe } from "./sections/AboutMe";
+import { MyProjects } from "./sections/MyProjects";
+import { ContactMe } from "./sections/ContactMe";
 
 function App() {
   const all = useRef(null);
@@ -51,6 +53,8 @@ function App() {
         <FirstSection />
         <Technologies />
         <AboutMe />
+        <MyProjects />
+        <ContactMe />
       </div>
     </>
   );

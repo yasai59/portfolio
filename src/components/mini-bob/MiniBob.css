@@ -1,7 +1,7 @@
 .mini-bob::before {
   content: "";
   width: 250px;
-  height: 80px;
+  height: 110px;
   border: 2px solid var(--light);
   background-color: var(--dark);
   position: absolute;
@@ -12,7 +12,7 @@
 
 .mini-bob {
   width: 250px;
-  height: 80px;
+  height: 110px;
   border: 2px solid var(--light);
   background: var(--dark);
   position: relative;

@@ -26,7 +26,7 @@ export const AboutMe = () => {
           <br />
           <br />
           Alejandro Vidal Casado,
-          <br /> Junior Fullstack Developer
+          <br /> Junior Fullstack Developer.
         </p>
       </div>
     </div>
