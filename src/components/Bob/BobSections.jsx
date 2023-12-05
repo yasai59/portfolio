@@ -17,7 +17,11 @@ export const BobSections = ({ index }) => {
   const section = [
     // seccion 0 - Introduccion
     <div className="titles">
-      <h1 className="text-[160px]">
+      <h1
+        style={{
+          fontSize: "160px",
+        }}
+      >
         <span className="fill">{lang.code == "en" ? "HI I'M" : "私は"}</span>
         <br />
         <span className="void">
@@ -28,7 +32,12 @@ export const BobSections = ({ index }) => {
     </div>,
     // seccion 1 - Tecnologias
     <div className="titles grid place-items-center h-full w-full">
-      <h1 className={`text-[${lang.code == "en" ? 160 : 100}px] text-center`}>
+      <h1
+        className={`text-center`}
+        style={{
+          fontSize: `${lang.code == "en" ? 160 : 100}px`,
+        }}
+      >
         <span className="fill">
           {lang.code == "en" ? "FULLSTACK" : "フルスタック"}
         </span>{" "}
@@ -40,17 +49,31 @@ export const BobSections = ({ index }) => {
     </div>,
     // seccion 2 - Sobre mi
     <div className="titles grid place-items-center h-full w-full">
-      <h1 className={`text-[${lang.code == "en" ? 160 : 120}px] `}>
+      <h1
+        style={{
+          fontSize: `${lang.code == "en" ? 160 : 120}px`,
+        }}
+      >
         <span className="void">{lang.code == "en" ? "ABOUT" : "私に"}</span>{" "}
         <br />
-        <span className={`fill ms-[${lang.code == "en" ? 300 : 200}px]`}>
+        <span
+          className={`fill`}
+          style={{
+            marginLeft: `${lang.code == "en" ? "300px" : "200px"}`,
+          }}
+        >
           {lang.code == "en" ? "ME" : "ついて"}
         </span>
       </h1>
     </div>,
     // seccion 3 - Proyectos
     <div className="titles grid place-items-center h-full w-full">
-      <h1 className={`text-[${lang.code == "en" ? 160 : 120}px] text-center`}>
+      <h1
+        className={`text-center`}
+        style={{
+          fontSize: `${lang.code == "en" ? 160 : 120}px`,
+        }}
+      >
         <span className="void">{lang.code == "en" ? "MY" : "私の"}</span> <br />
         <span className="void">
           {lang.code == "en" ? "PROJECTS" : "プロジェクト"}
@@ -61,9 +84,10 @@ export const BobSections = ({ index }) => {
     <div className="h-full w-full">
       <div className="flex flex-col h-full p-10 pt-0">
         <h1
-          className={`text-[${
-            lang.code == "en" ? 160 : 120
-          }px] text-center mt-5 titles`}
+          className={`text-center mt-5 titles`}
+          style={{
+            fontSize: `${lang.code == "en" ? 160 : 120}px`,
+          }}
         >
           <span className="void">
             {lang.code == "en" ? "CONTACT" : "私に"}{" "}

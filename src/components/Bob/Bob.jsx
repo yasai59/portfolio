@@ -45,8 +45,8 @@ export const Bob = () => {
       : "ボブは私についてもっと説明したい",
     null,
     lang.code == "en"
-      ? "Bob thanks you for staying till the end"
-      : "ボブ、最後まで残ってくれてありがとう",
+      ? "thank you for staying till the end"
+      : "最後まで残ってくれてありがとう",
   ];
 
   return (
