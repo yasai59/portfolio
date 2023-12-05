@@ -64,7 +64,7 @@
 }
 
 .titles {
-  font-family: 'Anton';
+  font-family: 'Anton', 'cp_font';
   padding-left: 10px;
   line-height: 1.1;
 }

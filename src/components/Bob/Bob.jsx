@@ -8,8 +8,23 @@ import { useRef } from "react";
 import { BobSections } from "./BobSections";
 import { getBobSize } from "../../helpers/getBobSize";
 
+const BobSays = ({ text }) => {
+  if (!text) {
+    return <></>;
+  }
+
+  return (
+    <div className="bob-says absolute bottom-[100%] w-full">
+      <p className="bob-talk text-light text-xl text-center w-[40rem]">
+        {text}
+      </p>
+      <img src="/assets/line.svg" className="ms-[20rem]" />
+    </div>
+  );
+};
+
 export const Bob = () => {
-  const { activeSection } = useContext(LangContext);
+  const { activeSection, lang } = useContext(LangContext);
 
   const bobWrapper = useRef(null);
 
@@ -20,6 +35,20 @@ export const Bob = () => {
     bobWrapper.current.style.width = `${width}`;
   }, [activeSection]);
 
+  let bobLines = [
+    lang.code == "en" ? "This is Bob" : "ボブだ",
+    lang.code == "en"
+      ? "Bob will accompany you during your stay"
+      : "ご滞在中はボブが同行",
+    lang.code == "en"
+      ? "Bob wants to explain more about me"
+      : "ボブは私についてもっと説明したい",
+    null,
+    lang.code == "en"
+      ? "Bob thanks you for staying till the end"
+      : "ボブ、最後まで残ってくれてありがとう",
+  ];
+
   return (
     <div className="bob-wraper" ref={bobWrapper}>
       <div className="bob">
@@ -29,6 +58,7 @@ export const Bob = () => {
         <div className="line line-1"></div>
         <div className="line line-2"></div>
         <div className="line line-3"></div>
+        <BobSays text={bobLines[activeSection]} />
       </div>
     </div>
   );

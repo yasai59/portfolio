@@ -18,6 +18,20 @@
   src: url('/fonts/Mintsoda.ttf');
 }
 
+@font-face {
+  font-family: 'cp_font';
+  src: url('/fonts/CP_font.otf')
+}
+
+@font-face {
+  font-family: 'BestTen';
+  src: url('/fonts/BestTen.otf')
+}
+
 .pixel {
   font-family: 'Handjet', 'Mintsoda';
+}
+
+.bob-talk {
+  font-family: 'Silkscreen', 'BestTen';
 }
