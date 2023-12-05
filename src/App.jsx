@@ -1,8 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { FirstSection } from "./sections/FirstSection";
 import { Technologies } from "./sections/Technologies";
-import { useEffect } from "react";
-import { useContext } from "react";
 import { LangContext } from "./context/LangContext";
 import { Bob } from "./components/Bob/Bob";
 import { AboutMe } from "./sections/AboutMe";
