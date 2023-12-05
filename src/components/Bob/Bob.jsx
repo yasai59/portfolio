@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { LangContext } from "../../context/LangContext";
 import { useRef } from "react";
 import { BobSections } from "./BobSections";
+import { getBobSize } from "../../helpers/getBobSize";
 
 export const Bob = () => {
   const { activeSection } = useContext(LangContext);
@@ -13,23 +14,10 @@ export const Bob = () => {
   const bobWrapper = useRef(null);
 
   useEffect(() => {
-    const height = window.innerHeight;
-    const width = window.innerWidth;
-
-    const left = ["50vw", `${width - 500}px`, "700px"];
-
-    bobWrapper.current.style.top = `${
-      height * activeSection + height / 2 - 50
-    }px`;
-    bobWrapper.current.style.left = left[activeSection] || "50vw";
-
-    if (activeSection === 3) {
-      bobWrapper.current.style.width = "900px";
-    } else if (activeSection === 4) {
-      bobWrapper.current.style.width = "1300px";
-    } else {
-      bobWrapper.current.style.width = "700px";
-    }
+    const { top, left, width } = getBobSize(activeSection);
+    bobWrapper.current.style.top = `${top}`;
+    bobWrapper.current.style.left = `${left}`;
+    bobWrapper.current.style.width = `${width}`;
   }, [activeSection]);
 
   return (
