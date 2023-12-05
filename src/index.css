@@ -6,3 +6,9 @@
   --light: #fafafa;
   --dark: #141414;
 }
+
+.give-a-cookie {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
