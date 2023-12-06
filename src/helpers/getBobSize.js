@@ -6,13 +6,13 @@ export const getBobSize = (activeSection) => {
   const height = window.innerHeight;
   const width = window.innerWidth;
 
-  const left = ["50vw", `${width - 500}px`, "700px"];
+  const left = ["50vw", `75vw`, "35vw"];
 
-  bobTop = `${height * activeSection + height / 2 - 50}px`;
+  bobTop = `${height * activeSection + height / 2 - 20}px`;
   bobLeft = left[activeSection] || "50vw";
 
   if (activeSection === 3) {
-    bobWidth = "900px";
+    bobWidth = "650px";
   } else if (activeSection === 4) {
     bobWidth = "1300px";
   } else {

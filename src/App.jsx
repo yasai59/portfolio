@@ -47,12 +47,14 @@ function App() {
         className="relative w-full h-screen overflow-auto snap-y snap-mandatory"
         ref={all}
       >
-        <Bob />
-        <FirstSection />
-        <Technologies />
-        <AboutMe />
-        <MyProjects />
-        <ContactMe />
+        <div className="container m-auto">
+          <Bob />
+          <FirstSection />
+          <Technologies />
+          <AboutMe />
+          <MyProjects />
+          <ContactMe />
+        </div>
       </div>
     </>
   );

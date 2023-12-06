@@ -75,7 +75,12 @@ export const BobSections = ({ index }) => {
         }}
       >
         <span className="void">{lang.code == "en" ? "MY" : "私の"}</span> <br />
-        <span className="void">
+        <span
+          className="void"
+          style={{
+            fontSize: `${lang.code == "en" ? 160 : 100}px`,
+          }}
+        >
           {lang.code == "en" ? "PROJECTS" : "プロジェクト"}
         </span>
       </h1>
