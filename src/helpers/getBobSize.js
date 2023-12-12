@@ -10,13 +10,10 @@ export const getBobSize = (activeSection) => {
 
   bobTop = `${height * activeSection + height / 2 - 20}px`;
   bobLeft = left[activeSection] || "50vw";
-
-  if (activeSection === 3) {
-    bobWidth = "650px";
-  } else if (activeSection === 4) {
-    bobWidth = "1300px";
+  if (activeSection === 4) {
+    bobWidth = "80rem";
   } else {
-    bobWidth = "700px";
+    bobWidth = "44rem";
   }
 
   return { width: bobWidth, left: bobLeft, top: bobTop };

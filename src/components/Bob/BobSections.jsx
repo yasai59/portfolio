@@ -19,7 +19,7 @@ export const BobSections = ({ index }) => {
     <div className="titles">
       <h1
         style={{
-          fontSize: "160px",
+          fontSize: "10rem",
         }}
       >
         <span className="fill">{lang.code == "en" ? "HI I'M" : "私は"}</span>
@@ -35,7 +35,7 @@ export const BobSections = ({ index }) => {
       <h1
         className={`text-center`}
         style={{
-          fontSize: `${lang.code == "en" ? 160 : 100}px`,
+          fontSize: `${lang.code == "en" ? 10 : 7}rem`,
         }}
       >
         <span className="fill">
@@ -51,7 +51,7 @@ export const BobSections = ({ index }) => {
     <div className="titles grid place-items-center h-full w-full">
       <h1
         style={{
-          fontSize: `${lang.code == "en" ? 160 : 120}px`,
+          fontSize: `${lang.code == "en" ? 10 : 7}rem`,
         }}
       >
         <span className="void">{lang.code == "en" ? "ABOUT" : "私に"}</span>{" "}
@@ -71,14 +71,14 @@ export const BobSections = ({ index }) => {
       <h1
         className={`text-center`}
         style={{
-          fontSize: `${lang.code == "en" ? 160 : 120}px`,
+          fontSize: `${lang.code == "en" ? 10 : 7}rem`,
         }}
       >
         <span className="void">{lang.code == "en" ? "MY" : "私の"}</span> <br />
         <span
           className="void"
           style={{
-            fontSize: `${lang.code == "en" ? 160 : 100}px`,
+            fontSize: `${lang.code == "en" ? 10 : 6}rem`,
           }}
         >
           {lang.code == "en" ? "PROJECTS" : "プロジェクト"}
@@ -91,7 +91,7 @@ export const BobSections = ({ index }) => {
         <h1
           className={`text-center mt-5 titles`}
           style={{
-            fontSize: `${lang.code == "en" ? 160 : 120}px`,
+            fontSize: `${lang.code == "en" ? 10 : 7}rem`,
           }}
         >
           <span className="void">
