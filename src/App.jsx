@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     all.current.addEventListener("scroll", (e) => {
-      if (e.target.scrollTop % window.innerHeight === 0) {
+      if (e.target.scrollTop % window.innerHeight < 10) {
         const section = Math.floor(e.target.scrollTop / window.innerHeight);
         setActiveSection(section);
       }
