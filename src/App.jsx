@@ -43,13 +43,16 @@ function App() {
 
   return (
     <>
+      {/* esto es para que carguen antes las fuentes del japonés */}
+      <p className="mintsoda absolute opacity-0">Hola</p>
+      <p className="bestTen absolute opacity-0">Hola</p>
       <div
         className="relative w-full h-screen overflow-auto snap-y snap-mandatory"
         ref={all}
       >
         <div className="container m-auto">
           <Bob />
-          <FirstSection />
+          <FirstSection all={all} />
           <Technologies />
           <AboutMe />
           <MyProjects />

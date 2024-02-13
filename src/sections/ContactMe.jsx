@@ -4,6 +4,10 @@ import { useRef } from "react";
 export const ContactMe = () => {
   const divRef = useRef(null);
 
+  const preventDrag = (e) => {
+    e.preventDefault();
+  };
+
   const handleClick = (e) => {
     const audio = new Audio("/assets/eat.mp3");
     const cookieEat = document.createElement("img");
@@ -30,6 +34,7 @@ export const ContactMe = () => {
               width: "150px",
             }}
             onClick={handleClick}
+            onDragStart={preventDrag}
           />
         </div>
       </div>

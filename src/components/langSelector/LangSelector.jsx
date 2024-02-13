@@ -15,7 +15,6 @@ const SelectedLang = ({ lang }) => {
 
 export const LangSelector = () => {
   const { lang, changeLang, langList } = useContext(LangContext);
-  console.log(lang);
 
   const [visible, setVisible] = useState(false);
   const div = useRef(null);

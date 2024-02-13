@@ -1,7 +1,15 @@
 import React from "react";
 import { LangSelector } from "../components/langSelector/LangSelector";
 
-export const FirstSection = () => {
+export const FirstSection = ({ all }) => {
+  const scrollOnClick = () => {
+    console.log("as");
+    all.current.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="start" className="h-screen relative section snap-center">
       <div className="flex justify-center items-center flex-col">
@@ -16,9 +24,10 @@ export const FirstSection = () => {
         }}
       >
         <img
+          onClick={scrollOnClick}
           src="/assets/arrowBack.svg"
           alt="arrow-down"
-          className="w-[80px] mx-auto rotate-[-90deg]"
+          className="w-[80px] mx-auto rotate-[-90deg] hover:cursor-pointer"
         />
       </div>
     </section>

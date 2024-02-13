@@ -13,32 +13,31 @@
 .mini-bob {
   width: 250px;
   height: 110px;
-  border: 2px solid var(--light);
-  background: var(--dark);
   position: relative;
+  border: 2px solid transparent;
 }
 
 .mini-line {
   width: 35px;
-  transform: rotate(-45deg);
+  transform: rotate(-43deg);
   height: 2px;
   background-color: var(--light);
   position: absolute;
 }
 
 .mini-line-1 {
-  top: 10px;
+  top: 12px;
   left: -30px;
 }
 
 .mini-line-2 {
-  bottom: -14px;
+  bottom: -12px;
   left: -30px;
 }
 
 .mini-line-3 {
-  bottom: -14px;
-  right: -6px;
+  bottom: -11px;
+  right: -4px;
 }
 
 .mini-bob-content {
@@ -48,6 +47,21 @@
   justify-content: center;
   align-items: center;
   color: var(--light);
+  border: 2px solid var(--light);
+  background-color: var(--dark);
   font-family: 'Handjet', 'Mintsoda';
   font-size: 24px;
+  transition: transform 0.3s;
 }
+
+.mini-bob-link:hover {
+  transition: none;
+  cursor: pointer;
+}
+
+.mini-bob-link:hover .mini-bob-content {
+  transform: translate(10px, -10px);
+  color: black;
+  background-color: var(--light);
+}
+
