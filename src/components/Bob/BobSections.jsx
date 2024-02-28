@@ -19,7 +19,7 @@ export const BobSections = ({ index }) => {
     <div className="titles">
       <h1
         style={{
-          fontSize: "10rem",
+          fontSize: "14vh",
         }}
       >
         <span className="fill">{lang.code == "en" ? "HI I'M" : "私は"}</span>
@@ -35,7 +35,7 @@ export const BobSections = ({ index }) => {
       <h1
         className={`text-center`}
         style={{
-          fontSize: `${lang.code == "en" ? 10 : 7}rem`,
+          fontSize: `${lang.code == "en" ? 14 : 10}vh`,
         }}
       >
         <span className="fill">

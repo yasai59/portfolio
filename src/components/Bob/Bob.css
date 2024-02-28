@@ -12,8 +12,6 @@
 }
 
 .bob-wraper {
-  width: 44rem;
-  height: 44rem;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -67,4 +65,10 @@
   font-family: 'Anton', 'cp_font';
   padding-left: 10px;
   line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .bob-wraper {
+    scale: 0.8;
+  }
 }

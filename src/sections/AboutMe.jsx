@@ -6,7 +6,7 @@ export const AboutMe = () => {
   const { lang } = useContext(LangContext);
 
   const englishContent = (
-    <p className="pixel text-2xl">
+    <p className="pixel text-[2vh]">
       Hello, I'm Alejandro Vidal Casado, a Junior Fullstack Developer with a
       special focus on JavaScript.
       <br />
@@ -56,7 +56,7 @@ export const AboutMe = () => {
   );
 
   return (
-    <div className="h-screen relative section snap-center grid grid-cols-2 place-items-center text-light">
+    <div className="h-screen relative section snap-center grid md:grid-cols-2 place-items-center text-light">
       <div></div>
       <div className="w-[400px]">
         {lang.code === "ja" ? japaneseContent : englishContent}

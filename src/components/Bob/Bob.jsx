@@ -29,10 +29,12 @@ export const Bob = () => {
   const bobWrapper = useRef(null);
 
   useEffect(() => {
-    const { top, left, width } = getBobSize(activeSection);
+    const { top, left, width, height, display } = getBobSize(activeSection);
     bobWrapper.current.style.top = `${top}`;
     bobWrapper.current.style.left = `${left}`;
     bobWrapper.current.style.width = `${width}`;
+    bobWrapper.current.style.height = `${height}`;
+    bobWrapper.current.style.display = `${display}`;
   }, [activeSection]);
 
   let bobLines = [

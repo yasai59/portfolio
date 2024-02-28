@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('/fonts/Anton-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Handjet';
+  src: url('/fonts/Handjet.ttf');
+}
+
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('/fonts/Silkscreen-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Mintsoda';
+  src: url('/fonts/Mintsoda.ttf');
+}
+
+@font-face {
+  font-family: 'cp_font';
+  src: url('/fonts/CP_font.otf')
+}
+
+@font-face {
+  font-family: 'BestTen';
+  src: url('/fonts/BestTen.otf')
+}
+
+.pixel {
+  font-family: 'Handjet', 'Mintsoda';
+}
+
+.mintsoda {
+  font-family: 'Mintsoda';
+}
+
+.bestTen {
+  font-family: 'BestTen';
+}
+
+.bob-talk {
+  font-family: 'Silkscreen', 'BestTen';
+}

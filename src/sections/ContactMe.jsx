@@ -1,15 +1,25 @@
 import React from "react";
+import { useState } from "react";
 import { useRef } from "react";
 
 export const ContactMe = () => {
   const divRef = useRef(null);
+  const [time, setTime] = useState(0);
 
   const preventDrag = (e) => {
     e.preventDefault();
   };
 
   const handleClick = (e) => {
-    const audio = new Audio("/assets/eat.mp3");
+    setTime(time + 1);
+
+    let audio = new Audio(
+      time === 5 ? "/assets/pou_na.mp3" : "/assets/eat.mp3"
+    );
+    if (time === 5) {
+      setTime(0);
+    }
+
     const cookieEat = document.createElement("img");
     cookieEat.src = "/assets/cookie.png";
     cookieEat.classList.add("gotoCenter");
@@ -24,7 +34,7 @@ export const ContactMe = () => {
   return (
     <div className="h-screen snap-center relative">
       <div className="give-a-cookie flex flex-col items-center">
-        <p className="pixel text-white text-center text-2xl">
+        <p className="pixel text-white text-center text-xl">
           Give Bob a cookie
         </p>
         <div ref={divRef}>

@@ -10,22 +10,6 @@
 - HTML + CSS
 - Tailwindcss
 
-## Setting up development
+## Where's hosted?
 
-1. Clone the repository
-2. Install dependencies
-```
-pnpm i
-```
-3. Run dev script
-```
-pnpm dev
-```
-
-## Building
-
-- Run build script
-
-```
-pnpm build
-```
+this site is hosted in my own private server. You can access it from this link -> https://yasai59.com

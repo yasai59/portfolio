@@ -36,8 +36,9 @@
 }
 
 .mini-line-3 {
-  bottom: -11px;
-  right: -4px;
+  transform: rotate(-48deg);
+  bottom: -13px;
+  right: -5px;
 }
 
 .mini-bob-content {
@@ -65,3 +66,30 @@
   background-color: var(--light);
 }
 
+@media screen and (max-width: 768px){
+  .mini-bob::before {
+    display: none;
+  }
+  .mini-bob {
+    width: 200px;
+    height: 80px;
+  }
+  .mini-bob-content {
+    font-size: 20px;
+  }
+  .mini-line {
+    width: 25px;
+  }
+  .mini-line-1 {
+    top: 10px;
+    left: -20px;
+  }
+  .mini-line-2 {
+    bottom: -10px;
+    left: -20px;
+  }
+  .mini-line-3 {
+    bottom: -10px;
+    right: -5px;
+  }
+}
