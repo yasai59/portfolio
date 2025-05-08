@@ -4,15 +4,28 @@ import { Icon } from "astro-icon/components"
 import Bob from "../components/Bob.astro"
 ---
 
-<section class="container m-auto">
-  <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold mb-5 font-mono">Web developer <br> & Student</h1>
-  <div class="flex-col flex sm:flex-row sm:items-end">
-    <Bob/>
-    <a href="https://home.yasai59.com" class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center">
-      See all my projects
-    </a>
-    <a href="https://home.yasai59.com" class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text">
-        <p class="mr-3">CV</p> <Icon name="mdi:tray-download"/>
+<section class="container m-auto grow-1 flex flex-col items-center">
+  <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-5 font-mono text-center flex flex-col items-center">Alejandro Vidal 
+    <div class="block h-1 w-10 bg-primary rounded-sm my-2"></div> 
+    Web developer
+  </h1>
+  <div class="grow-1">
+    <div class="flex-col flex items-center sm:flex-row sm:items-end">
+      <Bob />
+      <a href="https://home.yasai59.com" class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center">
+        See all my projects
+      </a>
+      <a href="https://home.yasai59.com" class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text">
+          <p class="mr-3">CV</p> <Icon name="mdi:tray-download"/>
+      </a>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <p class="mb-3">
+      scroll down to continue
+    </p>
+    <a href="https://google.com" class="border-2 rounded-lg border-primary w-min p-1 m-auto mb-20 animate-float block">
+      <Icon name={"mdi:arrow-down-bold"} class="text-5xl"/>
     </a>
   </div>
 </section>

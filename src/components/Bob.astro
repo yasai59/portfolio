@@ -10,11 +10,15 @@
 <script>
   const eyes = document.querySelectorAll('.eye');
   eyes.forEach(eye => {
-    const rect = eye.getBoundingClientRect();
-    const eyeCenterX = rect.left + rect.width / 2;
-    const eyeCenterY = rect.top + rect.height / 2;
+    let rect = eye.getBoundingClientRect();
+    // el metodo es costoso, lo actualizamos solo cuando hacemos scroll
+    document.addEventListener('scroll', () => {
+      rect = eye.getBoundingClientRect();
+    })
     const radius = 5; 
     document.addEventListener('mousemove', e => {
+      const eyeCenterX = rect.left + rect.width / 2;
+      const eyeCenterY = rect.top + rect.height / 2;
       const deltaX = e.clientX - eyeCenterX;
       const deltaY = e.clientY - eyeCenterY;
     

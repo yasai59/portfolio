@@ -37,3 +37,17 @@
   rotate: -30deg;
   transform: translate(1rem, -8rem);
 }
+
+.ripple {
+  @apply absolute w-5 h-5 rounded-sm border-1 border-primary/40;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple-animation 0.6s ease-out forwards;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: translate(-50%, -50%) scale(4) rotate(20deg);
+    opacity: 0;
+  }
+}
