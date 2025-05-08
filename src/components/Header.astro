@@ -1,0 +1,51 @@
+---
+import LanguageSelector from "./LanguageSelector.astro";
+---
+
+<header class="text-mono m-auto min-h-43 md:bg-background overflow-hidden">
+  <div class="flex justify-between items-center h-24 w-full container m-auto">
+    <h2>Alejandro <br> Vidal Casado </h2>
+
+    <!-- NAVBAR -->
+    <nav class="hidden gap-4 md:flex">
+      <a href="/#home" class="anim-underline">Home</a>
+      <a href="/#about" class="anim-underline">About</a>
+      <a href="/#studies" class="anim-underline">Studies</a>
+      <a href="/projects" class="anim-underline">Projects</a>
+    </nav>
+  
+    <!-- mobile navbar button -->
+    <nav class="flex md:hidden">
+      <button class="btn btn-ghost btn-circle cursor-pointer" id="mobile-menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </nav>
+
+    <LanguageSelector />
+  </div>
+
+  <!-- NAVBAR MOBILE -->
+  <div class="hidden w-full container md:hidden pb-5" id="nav-mobile">
+    <nav class="gap-4 flex-col bg-background">
+      <a href="/#home" class="anim-underline">Home</a>
+      <a href="/#about" class="anim-underline">About</a>
+      <a href="/#studies" class="anim-underline">Studies</a>
+      <a href="/projects" class="anim-underline">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<!-- JavaScript para toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const navMobile = document.getElementById('nav-mobile');
+
+    toggleBtn?.addEventListener('click', () => {
+      navMobile?.classList.toggle('hidden');
+      navMobile?.classList.toggle('flex');
+    });
+  });
+</script>

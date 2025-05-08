@@ -1,0 +1,19 @@
+/* FONTS */
+@theme {
+  --font-mono: 'Fira Mono', monospace;
+  --font-sans: 'Fira Code', sans-serif;
+}
+/* COLORS */
+@theme {
+  --color-background: #000000;
+  --color-primary: #FAFAFA;
+  --color-secondary: #6F6F6F;
+}
+
+.container {
+  @apply p-4;
+}
+
+.button-text {
+  @apply hover:bg-primary/80 transition-all duration-300
+}

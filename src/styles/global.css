@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tailwind customization */
+@import "./theme.css";
+
+/* Bob css */
+@import "./bob.css";
+/* Other css without tailwind */
+@import "./custom.css"

@@ -1,16 +1,25 @@
 ---
+import { Icon } from "astro-icon/components"
 
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Bob from "../components/Bob.astro"
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Alejandro Vidal - Portfolio">
+	<Header />
+	<div class="container m-auto">
+		<h1 class="text-5xl sm:text-6xl md:text-8xl font-bold mb-5 font-mono">Web developer <br> & Student</h1>
+		<div class="flex-col flex sm:flex-row sm:items-end">
+			<Bob/>
+			<a href="https://home.yasai59.com" class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center">
+				See all my projects
+			</a>
+			<a href="https://home.yasai59.com" class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text">
+					<p class="mr-3">CV</p> <Icon name="mdi:tray-download"/>
+			</a>
+		</div>
+	</div>
+</Layout>
+

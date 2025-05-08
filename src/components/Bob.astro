@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="bob">
+  <div class="eye"></div>
+  <div class="eye"></div>
+</div>
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const eyes = document.querySelectorAll('.eye');
+
+    eyes.forEach(eye => {
+      const rect = eye.getBoundingClientRect();
+      const eyeCenterX = rect.left + rect.width / 2;
+      const eyeCenterY = rect.top + rect.height / 2;
+
+      const deltaX = e.clientX - eyeCenterX;
+      const deltaY = e.clientY - eyeCenterY;
+
+      const angle = Math.atan2(deltaY, deltaX);
+      const radius = 5; 
+
+      const moveX = Math.cos(angle) * radius;
+      const moveY = Math.sin(angle) * radius;
+      // @ts-ignore
+      eye.style.setProperty('--pupil-x', `${moveX}px`);
+      // @ts-ignore
+      eye.style.setProperty('--pupil-y', `${moveY}px`);
+    });
+  });
+</script>
