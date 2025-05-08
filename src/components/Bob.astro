@@ -8,26 +8,25 @@
 </div>
 
 <script>
-  document.addEventListener('mousemove', (e) => {
-    const eyes = document.querySelectorAll('.eye');
-
-    eyes.forEach(eye => {
-      const rect = eye.getBoundingClientRect();
-      const eyeCenterX = rect.left + rect.width / 2;
-      const eyeCenterY = rect.top + rect.height / 2;
-
+  const eyes = document.querySelectorAll('.eye');
+  eyes.forEach(eye => {
+    const rect = eye.getBoundingClientRect();
+    const eyeCenterX = rect.left + rect.width / 2;
+    const eyeCenterY = rect.top + rect.height / 2;
+    const radius = 5; 
+    document.addEventListener('mousemove', e => {
       const deltaX = e.clientX - eyeCenterX;
       const deltaY = e.clientY - eyeCenterY;
-
+    
       const angle = Math.atan2(deltaY, deltaX);
-      const radius = 5; 
-
-      const moveX = Math.cos(angle) * radius;
-      const moveY = Math.sin(angle) * radius;
       // @ts-ignore
-      eye.style.setProperty('--pupil-x', `${moveX}px`);
+      eye.style.setProperty('--pupil-x', `${Math.cos(angle) * radius}px`);
       // @ts-ignore
-      eye.style.setProperty('--pupil-y', `${moveY}px`);
+      eye.style.setProperty('--pupil-y', `${Math.sin(angle) * radius}px`);
+    })
+  })
+  document.addEventListener('mousemove', (e) => {
+    eyes.forEach(eye => {
     });
   });
 </script>

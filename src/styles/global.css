@@ -1,4 +1,6 @@
+/* libraries imports */
 @import "tailwindcss";
+@import "./lenis.css";
 
 /* Tailwind customization */
 @import "./theme.css";
