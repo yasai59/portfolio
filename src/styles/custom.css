@@ -51,3 +51,26 @@
     opacity: 0;
   }
 }
+
+#scroll-arrow {
+  @apply bg-black;
+}
+
+#scroll-arrow::before {
+  content: ' ';
+  z-index: -1;
+  @apply w-full h-full border-2 border-secondary absolute rounded-md left-5 bottom-2;
+  animation: rotate 50s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50%{
+    transform: rotate(180deg) translateY(0.4rem);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0);
+  }
+}
