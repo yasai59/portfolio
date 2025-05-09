@@ -36,6 +36,11 @@
   border-radius: 1rem;
   rotate: -30deg;
   transform: translate(1rem, -8rem);
+  transition: all 1s ease;
+}
+
+#lng-selector:hover::before {
+  rotate: -25deg;
 }
 
 .ripple {
