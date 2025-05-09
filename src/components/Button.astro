@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  icon?: string,
+  href?: string,
+  className?: string
+}
+
+const {icon = "mdi:github", href = "#", className = ""} = Astro.props
+---
+<div class={`w-23 h-15 button ${className}`}>
+  <a href={href} target="_blank" class="relative w-15 h-15 block">
+    <div class="p-2 border-1 border-primary h-full rounded-lg flex items-center justify-center">
+      <Icon name={icon} class="text-5xl"/>
+    </div>
+    <div class="absolute w-8 h-8 bg-white rounded-sm text-background flex items-center justify-center -right-7 top-2 rotate-0 transition-transform duration-300 link-arrow">
+      <Icon name={"mdi:arrow-top-right"} class="text-2xl"/>
+    </div>
+  </a> 
+</div>

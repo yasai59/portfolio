@@ -95,3 +95,7 @@
 #footer-title::before {
   @apply w-100 h-100 border-2 border-secondary rounded-xl absolute bg-red-50;
 }
+
+.button:hover .link-arrow {
+  @apply rotate-20
+}
