@@ -10,14 +10,6 @@
   --color-secondary: #6F6F6F;
 }
 
-.container {
-  @apply p-4;
-}
-
-.button-text {
-  @apply hover:bg-primary/80 transition-all duration-300
-}
-
 @theme {
   --animate-float: float 5s ease-in-out infinite;
 
@@ -35,3 +27,4 @@
   }
   }
 }
+

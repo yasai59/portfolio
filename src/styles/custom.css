@@ -59,7 +59,7 @@
 #scroll-arrow::before {
   content: ' ';
   z-index: -1;
-  @apply w-full h-full border-2 border-secondary absolute rounded-md left-5 bottom-2;
+  @apply w-full h-full border-2 border-secondary absolute rounded-md left-5 bottom-1;
   animation: rotate 50s infinite linear;
 }
 
@@ -73,4 +73,20 @@
   100% {
     transform: rotate(360deg) translateY(0);
   }
+}
+
+.container {
+  @apply p-4;
+}
+
+.button-text {
+  @apply hover:bg-primary/80 transition-all duration-300;
+}
+
+.square {
+  @apply absolute border-2 border-secondary rounded-md -z-10;
+}
+
+#footer-title::before {
+  @apply w-100 h-100 border-2 border-secondary rounded-xl absolute bg-red-50;
 }
