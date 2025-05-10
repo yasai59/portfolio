@@ -34,13 +34,12 @@
   height: 12rem;
   border: 2px solid var(--color-secondary);
   border-radius: 1rem;
-  rotate: -30deg;
-  transform: translate(1rem, -8rem);
+  transform: rotate(-30deg) translate(1rem, -8rem);
   transition: all 1s ease;
 }
 
 #lng-selector:hover::before {
-  rotate: -25deg;
+  transform: rotate(-25deg) translate(1rem, -8rem);
 }
 
 .ripple {

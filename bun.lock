@@ -4,6 +4,8 @@
     "": {
       "name": "portfolio",
       "dependencies": {
+        "@fontsource-variable/jetbrains-mono": "^5.2.5",
+        "@fontsource-variable/public-sans": "^5.2.5",
         "@fontsource/fira-code": "^5.2.6",
         "@fontsource/fira-mono": "^5.2.6",
         "@tailwindcss/vite": "^4.1.5",
@@ -94,6 +96,10 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.25.4", "", { "os": "win32", "cpu": "ia32" }, "sha512-i1sW+1i+oWvQzSgfRcxxG2k4I9n3O9NRqy8U+uugaT2Dy7kLO9Y7wI72haOahxceMX8hZAzgGou1FhndRldxRg=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.4", "", { "os": "win32", "cpu": "x64" }, "sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ=="],
+
+    "@fontsource-variable/jetbrains-mono": ["@fontsource-variable/jetbrains-mono@5.2.5", "", {}, "sha512-G3sN1xq1moZd0JL+hFaA4MEdsiQS+JXC/z7m+EqA5/Fzn5CQlXGUaaNKFGQdDsFuLTnCfW0KOOSWHjygNfjEPw=="],
+
+    "@fontsource-variable/public-sans": ["@fontsource-variable/public-sans@5.2.5", "", {}, "sha512-/guMye9ATKBlF7FuQeTJqW3RBilKmgeno6O2HXNEaRHP1JpfpG4oG8HwX8Mf0w6UHHE2b4monggJr1IfR4NhuA=="],
 
     "@fontsource/fira-code": ["@fontsource/fira-code@5.2.6", "", {}, "sha512-wCkIpPm0BqlkCPLYeY4Vui96ODmVUV0/GpEe3OfJ4v8EJn/BF2SlyxvarFsTs1CKiGjrO2cXlIZbBrKi9F+hUQ=="],
 

@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@fontsource-variable/public-sans": "^5.2.5",
     "@fontsource/fira-code": "^5.2.6",
     "@fontsource/fira-mono": "^5.2.6",
     "@tailwindcss/vite": "^4.1.5",
