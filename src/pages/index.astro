@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroSection from "../sections/HeroSection.astro";
-import AboutMeSection from "../sections/AboutMeSection.astro"
+import AboutMeSection from "../sections/AboutMeSection.astro";
 import StudiesSection from "../sections/StudiesSection.astro";
 import Footer from "../components/Footer.astro";
 
@@ -10,29 +10,96 @@ import "../styles/global.css";
 ---
 
 <Layout title="Alejandro Vidal - Portfolio">
-	<div class="h-screen flex flex-col">
-		<Header />
-		<HeroSection />
-	</div>
-	<AboutMeSection />
-	<StudiesSection />
-  <Footer />
+    <div class="h-dvh flex flex-col">
+        <Header />
+        <HeroSection />
+    </div>
+    <div class="h-scroll-wrapper">
+        <div class="container m-auto">
+            <div class="h-scroll m-auto w-fit flex flex-nowrap">
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <AboutMeSection />
+                <StudiesSection />
+            </div>
+        </div>
+    </div>
+    <Footer />
 </Layout>
 
 <script>
-	// cuando haces click, se genera un cuadrado debajo de tu cursor
-	document.addEventListener('click', (e) => {
-  const ripple = document.createElement('div');
-  ripple.classList.add('ripple');
-  ripple.style.left = `${e.pageX}px`;
-  ripple.style.top = `${e.pageY}px`;
+    import gsap from "gsap";
+    import Lenis from "lenis";
+    import "lenis/dist/lenis.css";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  document.body.appendChild(ripple);
+    const lenis = new Lenis();
 
-  // Eliminar el elemento después de la animación
-  ripple.addEventListener('animationend', () => {
-    ripple.remove();
-  });
-});
+    // Use requestAnimationFrame to continuously update the scroll
+    function raf(time: any) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sections = document.querySelector(".h-scroll") as HTMLElement;
+    console.log(sections.offsetWidth);
+
+    const getScrollAmount = () => {
+        const sectionsWidth = sections.offsetWidth;
+
+        return window.innerWidth - sectionsWidth;
+    };
+
+    const tween = gsap.to(sections, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+    });
+
+    ScrollTrigger.create({
+        trigger: ".h-scroll-wrapper",
+        start: "top 20%",
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        markers: false,
+    });
+
+    // cuando haces click, se genera un cuadrado debajo de tu cursor
+    document.addEventListener("click", (e) => {
+        const ripple = document.createElement("div");
+        ripple.classList.add("ripple");
+        ripple.style.left = `${e.pageX}px`;
+        ripple.style.top = `${e.pageY}px`;
+
+        document.body.appendChild(ripple);
+
+        // Eliminar el elemento después de la animación
+        ripple.addEventListener("animationend", () => {
+            ripple.remove();
+        });
+    });
 </script>
-

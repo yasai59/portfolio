@@ -1,90 +1,116 @@
 ---
-import { Icon } from "astro-icon/components"
+import { Icon } from "astro-icon/components";
 
-import Bob from "../components/Bob.astro"
+import Bob from "../components/Bob.astro";
 ---
 
-<section class="container m-auto grow-1 flex flex-col items-center max-w-screen" id="hero">
-  <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-5 font-mono text-center flex flex-col items-center">Alejandro Vidal 
-    <div class="block h-1 w-30 bg-primary rounded-sm my-4 xs:my-10"></div> 
-    Web developer
-  </h1>
-  <div class="grow-1">
-    <div class="flex-col flex items-center sm:flex-row sm:items-end">
-      <Bob />
-      <a href="https://home.yasai59.com" class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center">
-        See all my projects
-      </a>
-      <a href="/CV/en/Alejandro_Vidal_CV.pdf" target="_blank" class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text">
-          <p class="mr-3">CV</p> <Icon name="mdi:tray-download"/>
-      </a>
+<section
+    class="container m-auto grow-1 flex flex-col items-center max-w-screen"
+    id="hero"
+>
+    <h1
+        class="text-4xl sm:text-6xl md:text-8xl font-black mb-5 font-mono text-center flex flex-col items-center"
+    >
+        Alejandro Vidal
+        <div class="block h-1 w-30 bg-primary rounded-sm my-4 xs:my-10"></div>
+        Web developer
+    </h1>
+    <div class="grow-1">
+        <div class="flex-col flex items-center sm:flex-row sm:items-end">
+            <Bob />
+            <a
+                href="https://home.yasai59.com"
+                class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center"
+            >
+                See all my projects
+            </a>
+            <a
+                href="/CV/en/Alejandro_Vidal_CV.pdf"
+                target="_blank"
+                class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text"
+            >
+                <p class="mr-3">CV</p>
+                <Icon name="mdi:tray-download" />
+            </a>
+        </div>
     </div>
-  </div>
-  <div class="text-center mt-3">
-    <p class="mb-3">
-      scroll down to continue
-    </p>
-    <div class="cursor-pointer relative border-2 rounded-lg border-primary w-14 h-14 m-auto mb-20 flex items-center justify-center bg-background" id="scroll-arrow">
-      <Icon name={"mdi:arrow-down-bold"} class="text-5xl"/>
+    <div class="text-center mt-3">
+        <p class="mb-3">scroll down to continue</p>
+        <div
+            class="cursor-pointer relative border-2 rounded-lg border-primary w-14 h-14 m-auto mb-20 flex items-center justify-center bg-background"
+            id="scroll-arrow"
+        >
+            <Icon name={"mdi:arrow-down-bold"} class="text-5xl" />
+        </div>
     </div>
-  </div>
 </section>
 <script>
-  import gsap from "gsap";
+    import gsap from "gsap";
 
-  const heroSection = document.getElementById('hero')
+    const heroSection = document.getElementById("hero");
 
-  function createSquare() {
-      const square = document.createElement('div');
-      square.classList.add('square');
-      const bounds = heroSection?.getBoundingClientRect();
+    function createSquare() {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        const bounds = heroSection?.getBoundingClientRect();
 
-      const size = gsap.utils.random(40, 80);
-      // @ts-ignore
-      const x = gsap.utils.random((size * 1.42) + 4, bounds?.width - (size * 1.42) - 4);
-      // @ts-ignore
-      const y = gsap.utils.random((size * 1.42) + 4, bounds?.height - (size * 1.42) - 4);
-      const rotation = gsap.utils.random(-280, 280);
-      const duration = gsap.utils.random(2, 5);
+        const size = gsap.utils.random(40, 80);
+        const x = gsap.utils.random(
+            size * 1.42 + 4,
+            // @ts-ignore
+            bounds?.width - size * 1.42 - 4,
+        );
+        const y = gsap.utils.random(
+            size * 1.42 + 4,
+            // @ts-ignore
+            bounds?.height - size * 1.42 - 4,
+        );
+        const rotation = gsap.utils.random(-280, 280);
+        const duration = gsap.utils.random(2, 5);
 
-      square.style.width = `${size}px`;
-      square.style.height = `${size}px`;
-      square.style.left = `${x}px`;
-      square.style.top = `${y}px`;
+        square.style.width = `${size}px`;
+        square.style.height = `${size}px`;
+        square.style.left = `${x}px`;
+        square.style.top = `${y}px`;
 
-      heroSection?.appendChild(square);
+        heroSection?.appendChild(square);
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          square.remove()
-        }
-      });
+        const tl = gsap.timeline({
+            onComplete: () => {
+                square.remove();
+            },
+        });
 
-      tl.fromTo(square,
-        { scale: 0, rotate: 0},
-        {
-          scale: 1,
-          rotate: rotation,
-          duration: duration,
-          onComplete: () => square.remove()
-        }
-      );
+        tl.fromTo(
+            square,
+            { scale: 0, rotate: 0 },
+            {
+                scale: 1,
+                rotate: rotation,
+                duration: duration,
+                onComplete: () => square.remove(),
+            },
+        );
 
-      tl.to(square, {
-        opacity: 0,
-        duration: duration * 0.6
-      }, duration * 0.4)
+        tl.to(
+            square,
+            {
+                opacity: 0,
+                duration: duration * 0.6,
+            },
+            duration * 0.4,
+        );
     }
 
     let activeWindow = true;
 
-    document.addEventListener('visibilitychange', () => {
-      activeWindow = !document.hidden;
-    })
+    document.addEventListener("visibilitychange", () => {
+        activeWindow = !document.hidden;
+    });
 
     setInterval(() => {
-      if(activeWindow){
-        createSquare()
-      }
+        if (activeWindow) {
+            createSquare();
+        }
     }, 1000); // frecuencia de creación
 </script>
