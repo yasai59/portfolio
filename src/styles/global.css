@@ -1,7 +1,5 @@
-
 /* libraries imports */
 @import "tailwindcss";
-@import "./lenis.css";
 
 /* Tailwind customization */
 @import "./theme.css";
@@ -9,4 +7,4 @@
 /* Bob css */
 @import "./bob.css";
 /* Other css without tailwind */
-@import "./custom.css"
+@import "./custom.css";
