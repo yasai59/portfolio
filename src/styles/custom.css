@@ -92,7 +92,8 @@
 }
 
 #footer-title::before {
-    @apply w-100 h-100 border-2 border-secondary rounded-xl absolute bg-red-50;
+    content: " ";
+    @apply h-110 w-110 lg:w-150 lg:h-150 border-2 border-secondary rounded-xl absolute -left-40 -top-20 rotate-15;
 }
 
 .button:hover .link-arrow {

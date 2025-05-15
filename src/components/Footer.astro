@@ -2,17 +2,17 @@
 import SectionTitle from "./SectionTitle.astro";
 ---
 
-<footer class="h-dvh overflow-hidden pt-20">
+<footer class="h-dvh overflow-hidden pb-20 flex flex-col justify-end items-center">
     <div
-        class="container m-auto grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2"
+        class="container grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2"
     >
         <div id="footer-title" class="relative row-start-2">
-            <h2 class="text-8xl text-right w-min">Alejandro <br /> Vidal</h2>
-            <p class="absolute bottom-4 left-4 text-secondary">
+            <h2 class="text-6xl lg:text-8xl text-right w-min font-semibold">Alejandro <br /> Vidal</h2>
+            <p class="absolute bottom-0 left-0 lg:bottom-4 lg:left-4 text-secondary">
                 Web developer <br /> & student
             </p>
         </div>
-        <div class="md:ml-20 col-start-1 md:col-start-2">
+        <div class="lg:ml-20 col-start-1 lg:col-start-2">
             <SectionTitle>Contact</SectionTitle>
         </div>
     </div>
