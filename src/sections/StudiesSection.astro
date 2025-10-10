@@ -1,11 +1,29 @@
 ---
 import Bob from "../components/Bob.astro";
 import SectionTitle from "../components/SectionTitle.astro";
+import ListItem from "../components/ListItem.astro";
 ---
 
 <section class="container-force shrink-0">
-    <div class="w-full items-center flex justify-between">
-        <SectionTitle>Studies</SectionTitle>
-        <Bob />
-    </div>
+  <div class="w-full items-center flex justify-between">
+    <SectionTitle>Studies</SectionTitle>
+    <Bob />
+  </div>
+  <div class="mt-20 border-secondary rounded-3xl border-2 w-full overflow-clip">
+    <ListItem
+      fecha="2024-2028"
+      nombre="Computer Engineering"
+      centro="FIB - UPC"
+    />
+    <ListItem
+      fecha="2022-2024"
+      nombre="Web App Development"
+      centro="Jaume Viladoms"
+    />
+    <ListItem
+      fecha="2020-2022"
+      nombre="Microcomputer Systems and Networks"
+      centro="Jaume Viladoms"
+    />
+  </div>
 </section>
