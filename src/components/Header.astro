@@ -4,7 +4,7 @@ import LanguageSelector from "./LanguageSelector.astro";
 
 <header class="text-mono min-h-43 overflow-hidden grow-0">
   <div class="flex justify-between items-center h-24 w-full container m-auto">
-    <h2>Alejandro <br> Vidal Casado </h2>
+    <h2>Alejandro <br /> Vidal Casado</h2>
 
     <!-- NAVBAR -->
     <nav class="hidden gap-4 md:flex">
@@ -13,12 +13,25 @@ import LanguageSelector from "./LanguageSelector.astro";
       <a href="/#studies" class="anim-underline">Studies</a>
       <a href="/projects" class="anim-underline">Projects</a>
     </nav>
-  
+
     <!-- mobile navbar button -->
     <nav class="flex md:hidden">
-      <button class="btn btn-ghost btn-circle cursor-pointer" id="mobile-menu-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      <button
+        class="btn btn-ghost btn-circle cursor-pointer"
+        id="mobile-menu-toggle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </nav>
@@ -39,13 +52,13 @@ import LanguageSelector from "./LanguageSelector.astro";
 
 <!-- JavaScript para toggle -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('mobile-menu-toggle');
-    const navMobile = document.getElementById('nav-mobile');
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("mobile-menu-toggle");
+    const navMobile = document.getElementById("nav-mobile");
 
-    toggleBtn?.addEventListener('click', () => {
-      navMobile?.classList.toggle('hidden');
-      navMobile?.classList.toggle('flex');
+    toggleBtn?.addEventListener("click", () => {
+      navMobile?.classList.toggle("hidden");
+      navMobile?.classList.toggle("flex");
     });
   });
 </script>

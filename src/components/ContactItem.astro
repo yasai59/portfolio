@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  href: string;
+  text: string;
+  bottom_text: string;
+}
+
+const { icon, href, text, bottom_text } = Astro.props;
+---
+
+<div class="font-mono">
+  <div class="flex items-center text-xl">
+    <p>{text}</p>
+    <Icon name={icon} class="text-2xl ml-3" />
+  </div>
+  <div class="text-secondary w-min group">
+    <a
+      href={href}
+      class="flex group-hover:text-primary transition-all duration-200"
+      target="_blank"
+      >{bottom_text}
+      <Icon
+        name="mdi:arrow-up"
+        class="rotate-45 group-hover:text-primary group-hover:rotate-[65deg] transition-all duration-200"
+      /></a
+    >
+  </div>
+</div>
