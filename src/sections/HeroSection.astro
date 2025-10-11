@@ -27,7 +27,7 @@ import Bob from "../components/Bob.astro";
       <a
         href="/CV/en/Alejandro_Vidal_CV.pdf"
         target="_blank"
-        class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text mx-5"
+        class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text mx-5 my-5 sm:my-0"
       >
         <p class="mr-3">CV</p>
         <Icon name="mdi:tray-download" />
@@ -48,6 +48,17 @@ import Bob from "../components/Bob.astro";
   import gsap from "gsap";
 
   const heroSection = document.getElementById("hero");
+
+  const scrollBtn = document.getElementById("scroll-arrow");
+
+  scrollBtn?.addEventListener("click", () => {
+    // scrollBy(0, (75 / 100) * window.innerHeight);
+    scrollBy({
+      top: (75 / 100) * window.innerHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
 
   function createSquare() {
     const square = document.createElement("div");
