@@ -1,24 +1,33 @@
 ---
-import '@fontsource/fira-code';
-import '@fontsource/fira-mono';
+import "@fontsource/fira-code";
+import "@fontsource/fira-mono";
 
-import '@fontsource-variable/jetbrains-mono';
-import '@fontsource-variable/public-sans';
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/public-sans";
+
+import { getLangFromUrl } from "../i18n/utils.ts";
 
 import "../styles/global.css";
 
 const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-  <body class="font-sans bg-background min-h-screen text-primary w-screen overflow-x-hidden">
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="font-sans bg-background min-h-screen text-primary w-screen overflow-x-hidden"
+  >
     <slot />
-	</body>
+  </body>
 </html>

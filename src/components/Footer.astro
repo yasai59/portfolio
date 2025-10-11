@@ -1,6 +1,10 @@
 ---
 import SectionTitle from "./SectionTitle.astro";
 import ContactItem from "./ContactItem.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -22,8 +26,7 @@ import ContactItem from "./ContactItem.astro";
     <div class="lg:ml-20 col-start-1 lg:col-start-2">
       <SectionTitle>Contact</SectionTitle>
       <p class="font-mono pt-15">
-        If you would like to get in touch with me, feel free to use the
-        following methods
+        {t("footer.contact.text")}
       </p>
       <div class="grid lg:grid-cols-2 mt-4">
         <ContactItem
