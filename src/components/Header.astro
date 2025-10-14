@@ -1,16 +1,20 @@
 ---
 import LanguageSelector from "./LanguageSelector.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header class="text-mono min-h-43 overflow-hidden grow-0">
   <div class="flex justify-between items-center h-24 w-full container m-auto">
-    <h2>Alejandro <br /> Vidal Casado</h2>
+    <h2>{t('general.name')} <br /> {t('general.surname')}</h2>
 
     <!-- NAVBAR -->
     <nav class="hidden gap-4 md:flex">
-      <a href="/#home" class="anim-underline">Home</a>
-      <a href="/#about" class="anim-underline">About</a>
-      <a href="/#studies" class="anim-underline">Studies</a>
+      <a href="#home" class="anim-underline">{t('nav.home')}</a>
+      <a href="#about" class="anim-underline">{t('nav.about')}</a>
+      <a href="#studies" class="anim-underline">{t('nav.studies')}</a>
       <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
 
@@ -42,9 +46,9 @@ import LanguageSelector from "./LanguageSelector.astro";
   <!-- NAVBAR MOBILE -->
   <div class="hidden w-full container md:hidden pb-5" id="nav-mobile">
     <nav class="gap-4 flex-col bg-background">
-      <a href="/#home" class="anim-underline">Home</a>
-      <a href="/#about" class="anim-underline">About</a>
-      <a href="/#studies" class="anim-underline">Studies</a>
+      <a href="#home" class="anim-underline">{t('nav.home')}</a>
+      <a href="#about" class="anim-underline">{t('nav.about')}</a>
+      <a href="#studies" class="anim-underline">{t('nav.studies')}</a>
       <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
   </div>

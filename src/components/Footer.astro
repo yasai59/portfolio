@@ -15,12 +15,10 @@ const t = useTranslations(lang);
   >
     <div id="footer-title" class="relative row-start-2 lg:row-start-1">
       <div class="relative">
-        <h2 class="text-6xl lg:text-8xl text-right w-min font-semibold">
-          Alejandro <br /> Vidal
+        <h2 class="text-5xl lg:text-7xl text-right font-semibold flex min-w-min">
+          {t('general.name')} <br /> {t('general.firstSurname')}
         </h2>
-        <p class="absolute bottom-0 left-0 text-secondary">
-          Web developer <br /> & student
-        </p>
+        <p class="absolute bottom-0 left-0 text-secondary" set:html={t('footer.title')}/>
       </div>
     </div>
     <div class="lg:ml-20 col-start-1 lg:col-start-2">

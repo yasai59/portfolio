@@ -1,10 +1,16 @@
 ---
 import SectionTitle from "../components/SectionTitle.astro";
 import Button from "../components/Button.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
-<section class="container-force shrink-0">
-    <SectionTitle>About me</SectionTitle>
+<section class="container-force shrink-0" id="about">
+    <SectionTitle>{t('about.title')}</SectionTitle>
     <div
         class="relative scale-70 sm:scale-75 md:scale-100 origin-top-left mt-10"
     >

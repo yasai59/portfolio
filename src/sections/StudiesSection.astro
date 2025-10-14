@@ -2,27 +2,33 @@
 import Bob from "../components/Bob.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import ListItem from "../components/ListItem.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
-<section class="container-force shrink-0">
+<section class="container-force shrink-0" id="studies">
   <div class="w-full items-center flex justify-between">
-    <SectionTitle>Studies</SectionTitle>
+    <SectionTitle>{t('studies.title')}</SectionTitle>
     <Bob />
   </div>
   <div class="mt-20 border-secondary rounded-3xl border-2 w-full overflow-clip">
     <ListItem
       fecha="2024-2028"
-      nombre="Computer Engineering"
+      nombre={t('studies.CS')}
       centro="FIB - UPC"
     />
     <ListItem
       fecha="2022-2024"
-      nombre="Web App Development"
+      nombre={t('studies.DAW')}
       centro="Jaume Viladoms"
     />
     <ListItem
       fecha="2020-2022"
-      nombre="Microcomputer Systems and Networks"
+      nombre={t('studies.SMIX')}
       centro="Jaume Viladoms"
     />
   </div>
