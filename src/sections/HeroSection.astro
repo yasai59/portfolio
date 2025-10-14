@@ -16,9 +16,10 @@ const t = useTranslations(lang);
   <h1
     class="text-4xl sm:text-6xl md:text-8xl font-black mb-5 font-mono text-center flex flex-col items-center"
   >
-    {t('general.name')} {t('general.firstSurname')}
+    {t("general.name")}
+    {t("general.firstSurname")}
     <div class="block h-1 w-30 bg-primary rounded-sm my-4 xs:my-10"></div>
-    {t('hero.title')}
+    {t("hero.title")}
   </h1>
   <div class="grow-1">
     <div class="flex-col flex items-center sm:flex-row sm:items-end">
@@ -40,7 +41,7 @@ const t = useTranslations(lang);
     </div>
   </div>
   <div class="text-center mt-3">
-    <p class="mb-3">{t('hero.scrollText')}</p>
+    <p class="mb-3">{t("hero.scrollText")}</p>
     <div
       class="cursor-pointer relative border-2 rounded-lg border-primary w-14 h-14 m-auto mb-20 flex items-center justify-center bg-background"
       id="scroll-arrow"
@@ -52,7 +53,7 @@ const t = useTranslations(lang);
 <script>
   import gsap from "gsap";
 
-  const heroSection = document.getElementById("hero");
+  const heroSection = document.getElementById("home");
 
   const scrollBtn = document.getElementById("scroll-arrow");
 
@@ -125,8 +126,8 @@ const t = useTranslations(lang);
   });
 
   setInterval(() => {
-    if (activeWindow) {
-      createSquare();
-    }
+    // if (activeWindow) {
+    createSquare();
+    // }
   }, 1000); // frecuencia de creación
 </script>
