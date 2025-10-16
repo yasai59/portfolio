@@ -5,6 +5,8 @@
       "name": "portfolio",
       "dependencies": {
         "@fontsource-variable/jetbrains-mono": "^5.2.5",
+        "@fontsource-variable/m-plus-1-code": "^5.2.9",
+        "@fontsource-variable/m-plus-2": "^5.2.9",
         "@fontsource-variable/public-sans": "^5.2.5",
         "@fontsource/fira-code": "^5.2.6",
         "@fontsource/fira-mono": "^5.2.6",
@@ -101,6 +103,10 @@
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.4", "", { "os": "win32", "cpu": "x64" }, "sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ=="],
 
     "@fontsource-variable/jetbrains-mono": ["@fontsource-variable/jetbrains-mono@5.2.5", "", {}, "sha512-G3sN1xq1moZd0JL+hFaA4MEdsiQS+JXC/z7m+EqA5/Fzn5CQlXGUaaNKFGQdDsFuLTnCfW0KOOSWHjygNfjEPw=="],
+
+    "@fontsource-variable/m-plus-1-code": ["@fontsource-variable/m-plus-1-code@5.2.9", "", {}, "sha512-7dk5Rjy6cY8fdoas4y5dkBQf0lCZDaahIcBf70+0B5zgqSf/vy0y7wr9KbE4iOVkSBPzzwGOtdlZLEQUH9GwrQ=="],
+
+    "@fontsource-variable/m-plus-2": ["@fontsource-variable/m-plus-2@5.2.9", "", {}, "sha512-DOitQ0wPFdgWCUob8XyCuA17BsZ0MnctRQD0B6OVcdWA/sVQuN/zR7+OHFi9hoeDV/eOpytt4tHKBKzIQblDAQ=="],
 
     "@fontsource-variable/public-sans": ["@fontsource-variable/public-sans@5.2.5", "", {}, "sha512-/guMye9ATKBlF7FuQeTJqW3RBilKmgeno6O2HXNEaRHP1JpfpG4oG8HwX8Mf0w6UHHE2b4monggJr1IfR4NhuA=="],
 

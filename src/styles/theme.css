@@ -1,7 +1,7 @@
 /* FONTS */
 @theme {
-    --font-mono: "JetBrains Mono Variable", "Fira Mono", monospace;
-    --font-sans: "Public Sans Variable", "Fira Code", sans-serif;
+    --font-mono: "JetBrains Mono Variable", "Fira Mono", 'M PLUS 2 Variable', monospace;
+    --font-sans: "Public Sans Variable", "Fira Code", 'M PLUS 2 Variable', sans-serif;
 }
 /* COLORS */
 @theme {

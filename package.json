@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@fontsource-variable/m-plus-1-code": "^5.2.9",
+    "@fontsource-variable/m-plus-2": "^5.2.9",
     "@fontsource-variable/public-sans": "^5.2.5",
     "@fontsource/fira-code": "^5.2.6",
     "@fontsource/fira-mono": "^5.2.6",
