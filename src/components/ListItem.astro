@@ -3,13 +3,15 @@ interface Props {
   fecha: string;
   nombre: string;
   centro: string;
+  detalle?: string;
 }
 
-const { fecha, nombre, centro } = Astro.props;
+const { fecha, nombre, centro, detalle = 'xd' } = Astro.props;
 ---
 
 <div
-  class="grid grid-cols-2 lg:grid-cols-3 items-center px-10 py-5 border-b-2 border-secondary last:border-b-0 w-full bg-background hover:bg-primary hover:text-background transition-all duration-300"
+  class="studies-item grid grid-cols-2 lg:grid-cols-3 items-center px-10 py-5 border-b-2 border-secondary last:border-b-0 w-full bg-background hover:bg-primary hover:text-background transition-all duration-300"
+  data-detalle={detalle}
 >
   <p class="text-left hidden lg:block">{fecha}</p>
   <p class="text-left">{nombre}</p>

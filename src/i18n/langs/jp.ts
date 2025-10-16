@@ -12,6 +12,10 @@ const jp = {
   "studies.CS": "コンピュータ工学",
   "studies.DAW": "ウェブ開発",
   "studies.SMIX": "コンピュータシステムとネットワークの専門課程",
+  "studies.bobsays": "詳細を見るためにリスト項目にマウスを合わせて下さい",
+  "studies.CS.detail": "今これを勉強していて大好きだ！",
+  "studies.DAW.detail": "カタロニアの最強の成績 - GPA: 3.98",
+  "studies.SMIX.detail": "居室の一番!",
   "contact.title": "連絡",
   "footer.contact.text":
     "私とつながりたかったら、次の選択肢を使ってください",

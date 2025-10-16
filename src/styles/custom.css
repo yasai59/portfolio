@@ -1,5 +1,9 @@
 /* Custom css without tailwind */
 
+html {
+    /* cursor: url('/cursor/normal.png'), auto; */
+}
+
 /* anchor underline animation */
 .anim-underline {
     position: relative;
@@ -116,3 +120,4 @@
         transparent 100%
     );
 }
+

@@ -12,6 +12,10 @@ const ca = {
   "studies.CS": "Enginyeria informàtica",
   "studies.DAW": "Desenvolupament d'Aplicacions Web",
   "studies.SMIX": "Sistemes Microinformàtics y Xarxes",
+  "studies.bobsays": "Posa't sobre els elements de la taula per veure mes detalls",
+  "studies.CS.detail": "Estic estudiant aixó i m'encanta!",
+  "studies.DAW.detail": "Vaig obtindre el millor expedient a catalunya - GPA: 3.98",
+  "studies.SMIX.detail": "El millor de classe!",
   "contact.title": "Contacte",
   "footer.contact.text":
     "Si voldries contactar amb mi, sent-te lliure de contactar-me per aqui",

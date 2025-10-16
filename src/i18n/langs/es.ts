@@ -12,6 +12,10 @@ const es = {
   "studies.CS": "Ingeniería informática",
   "studies.DAW": "Desarrollo de Aplicaciones Web",
   "studies.SMIX": "Sistemas Microinformáticos y Redes",
+  "studies.bobsays": "Ponte sobre los elementos de la lista para ver mas detalles",
+  "studies.CS.detail": "Estoy estudiando esto y me encanta!",
+  "studies.DAW.detail": "Obtuve el mejor expdiente de cataluña - GPA: 3.98",
+  "studies.SMIX.detail": "El mejor de clase!",
   "contact.title": "Contacto",
   "footer.contact.text":
     "Si te gustaria ponerte en contacto conmigo, sientete libre de contactarme por aqui",
