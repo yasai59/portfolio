@@ -2,14 +2,17 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import SectionTitle from "../../../components/SectionTitle.astro";
 import { languages } from "../../../i18n/ui";
 import { getLangFromUrl } from "../../../i18n/utils";
 import { getCollection } from "astro:content";
-const posts = (await getCollection("blog")).filter((p: any) => p.slug.startsWith(Astro.params.lang));
+import type { GetStaticPaths } from "astro";
+const posts = (await getCollection("blog")).filter((p: any) =>
+  p.slug.startsWith(Astro.params.lang),
+);
 
 const lang = getLangFromUrl(Astro.url);
 
-import type { GetStaticPaths } from "astro";
 export const getStaticPaths = (() => {
   let paths = [];
 
@@ -19,18 +22,30 @@ export const getStaticPaths = (() => {
   return paths;
 }) satisfies GetStaticPaths;
 
+// href={`/${lang}/blog/${post.slug.split("/")[1]}`}
 ---
 
 <Layout title="Blog">
   <div class="min-h-lvh">
-    <Header/>
+    <Header />
     <div class="container m-auto">
-      <ul>
-        {posts.map((post: any) => (
-          <li><a class="anim-underline" href={`/${lang}/blog/${post.slug.split("/")[1]}`}>{post.data.title}</a></li>
-        ))}
-      </ul>
+      <SectionTitle>Blog</SectionTitle>
+      <div class="grid grid-cols-3 mt-5">
+        {
+          posts.map((post) => (
+            <div class="block border-2 border-primary rounded-2xl p-3">
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <ul class="flex gap-2 text-secondary">
+                {post.data.tags?.map((tag) => (
+                  <li>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
-  <Footer/>
+  <Footer />
 </Layout>

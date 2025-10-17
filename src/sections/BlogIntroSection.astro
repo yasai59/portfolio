@@ -1,12 +1,12 @@
 ---
 import SectionTitle from "../components/SectionTitle.astro";
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-
 ---
 
 <section class="container-force m-auto">
   <SectionTitle>Blog</SectionTitle>
   <a href={`/${lang}/blog`} class="anim-underline">See more...</a>
 </section>
+
