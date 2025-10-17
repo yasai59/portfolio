@@ -12,9 +12,9 @@ const t = useTranslations(lang);
 
     <!-- NAVBAR -->
     <nav class="hidden gap-4 md:flex">
-      <a href="#home" class="anim-underline">{t('nav.home')}</a>
-      <a href="#about" class="anim-underline">{t('nav.about')}</a>
-      <a href="#studies" class="anim-underline">{t('nav.studies')}</a>
+      <a href={`/${lang}#home`} class="anim-underline">{t('nav.home')}</a>
+      <a href={`/${lang}#about`} class="anim-underline">{t('nav.about')}</a>
+      <a href={`/${lang}#studies`} class="anim-underline">{t('nav.studies')}</a>
       <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
 

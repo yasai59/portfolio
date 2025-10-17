@@ -1,5 +1,7 @@
 ---
 ---
 <script>
-  window.location.replace('/en');
+  const lang = localStorage.getItem('language') || 'en';
+
+  window.location.replace(`/${lang}`);
 </script>

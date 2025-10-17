@@ -10,6 +10,7 @@ import { languages } from "../../i18n/ui.ts";
 import "../../styles/global.css";
 
 import type { GetStaticPaths } from "astro";
+import BlogIntroSection from "../../sections/BlogIntroSection.astro";
 
 export const getStaticPaths = (() => {
   let paths = [];
@@ -27,6 +28,7 @@ export const getStaticPaths = (() => {
     <HeroSection />
   </div>
   <div class="container m-auto">
+    <!-- <BlogIntroSection/> -->
     <AboutMeSection />
     <StudiesSection />
   </div>

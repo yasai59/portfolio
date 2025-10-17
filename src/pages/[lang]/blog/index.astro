@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { languages } from "../../../i18n/ui";
+import { getLangFromUrl } from "../../../i18n/utils";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).filter((p: any) => p.slug.startsWith(Astro.params.lang));
+
+const lang = getLangFromUrl(Astro.url);
+
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+  let paths = [];
+
+  for (const key of Object.keys(languages)) {
+    paths.push({ params: { lang: key } });
+  }
+  return paths;
+}) satisfies GetStaticPaths;
+
+---
+
+<Layout title="Blog">
+  <div class="min-h-lvh">
+    <Header/>
+    <div class="container m-auto">
+      <ul>
+        {posts.map((post: any) => (
+          <li><a class="anim-underline" href={`/${lang}/blog/${post.slug.split("/")[1]}`}>{post.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <Footer/>
+</Layout>

@@ -1,0 +1,43 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import { languages } from "../../../i18n/ui";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  let arr = [];
+
+  for(const lang of Object.keys(languages)){
+    for(const post of posts){
+      arr.push({params: {lang, slug: post.slug.split('/')[1]}})
+    }
+  }
+  return arr;
+}
+const slug = Astro.params.slug;
+
+const lang = getLangFromUrl(Astro.url);
+const post = await getEntry("blog", `${lang}/${slug}`)
+if(!post) return {status: 404};
+
+const {Content, headings} = await post.render();
+
+console.log(Content);
+
+---
+
+<Layout title="ayuda">
+  <div class="min-h-lvh">
+    <Header/>
+    <main class="container m-auto">
+      <article>
+        <h1>{post.data.title}</h1>
+        <Content/>
+      </article>
+    </main>
+  </div>
+  <Footer/>
+</Layout>
