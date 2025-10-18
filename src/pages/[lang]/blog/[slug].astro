@@ -11,9 +11,9 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog");
   let arr = [];
 
-  for(const lang of Object.keys(languages)){
-    for(const post of posts){
-      arr.push({params: {lang, slug: post.slug.split('/')[1]}})
+  for (const lang of Object.keys(languages)) {
+    for (const post of posts) {
+      arr.push({ params: { lang, slug: post.slug.split("/")[1] } });
     }
   }
   return arr;
@@ -22,30 +22,37 @@ const slug = Astro.params.slug;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const post = await getEntry("blog", `${lang}/${slug}`)
-if(!post) return {status: 404};
-
-const {Content} = await post.render();
+const post = await getEntry("blog", `${lang}/${slug}`);
+if (!post) {
+  return new Response(null, { status: 404 });
+}
+const { Content } = await post.render();
 
 const constructDate = (dateString: string): string => {
   const date = new Date(dateString);
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long",
+  };
   return date.toLocaleDateString(lang, options);
-}
-
+};
 ---
 
 <BlogLayout title={post.data.title}>
   <div class="min-h-lvh">
-    <Header/>
+    <Header />
     <main class="container m-auto">
-        <h1 class="text-4xl">~/{post.data.title}</h1>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">{constructDate(post.data.date)}</p>
-        <h2 class="text-3xl font-black">{t("blog.toc")}</h2>
-        <Prose>
-          <Content/>
-        </Prose>
+      <h1 class="text-4xl">~/{post.data.title}</h1>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+        {constructDate(post.data.date)}
+      </p>
+      <h2 class="text-3xl font-black">{t("blog.toc")}</h2>
+      <Prose>
+        <Content />
+      </Prose>
     </main>
   </div>
-  <Footer/>
+  <Footer />
 </BlogLayout>
