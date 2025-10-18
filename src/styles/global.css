@@ -1,5 +1,8 @@
 /* libraries imports */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@tailwind utilities;
 
 /* Tailwind customization */
 @import "./theme.css";

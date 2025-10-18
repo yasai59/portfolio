@@ -7,26 +7,5 @@ tags: ["astro", "blog", "markdown", "ejemplo1", "ejemplo2", "ejemplo3", "ejemplo
 coverImg: "https://w.wallhaven.cc/full/5g/wallhaven-5g22q5.png"
 altImg: "Test photo"
 ---
- 
-## Bravo
- 
-### Charlie
 
-link a google:
-[jeje.com](https://google.com)
-
-```ts
-export function foo() {
-  console.log('hewwo') // [!code --]
-  console.log('hello') // [!code ++]
-}
-```
-
-```ts
-// [!code word:options:2]
-const options = { foo: 'bar' }
-options.foo = 'baz'
-console.log(options.foo) // this one will not be highlighted
-```
- 
-## Delta
+## hola!

@@ -1,10 +1,11 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import Layout from "../../../layouts/Layout.astro";
 import { languages } from "../../../i18n/ui";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import { getLangFromUrl } from "../../../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import Prose from "../../../components/Prose.astro";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -20,24 +21,31 @@ export async function getStaticPaths() {
 const slug = Astro.params.slug;
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const post = await getEntry("blog", `${lang}/${slug}`)
 if(!post) return {status: 404};
 
-const {Content, headings} = await post.render();
+const {Content} = await post.render();
 
-console.log(Content);
+const constructDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+  return date.toLocaleDateString(lang, options);
+}
 
 ---
 
-<Layout title="ayuda">
+<BlogLayout title={post.data.title}>
   <div class="min-h-lvh">
     <Header/>
     <main class="container m-auto">
-      <article>
-        <h1>{post.data.title}</h1>
-        <Content/>
-      </article>
+        <h1 class="text-4xl">~/{post.data.title}</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">{constructDate(post.data.date)}</p>
+        <h2 class="text-3xl font-black">{t("blog.toc")}</h2>
+        <Prose>
+          <Content/>
+        </Prose>
     </main>
   </div>
   <Footer/>
-</Layout>
+</BlogLayout>

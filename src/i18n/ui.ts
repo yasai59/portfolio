@@ -1,10 +1,10 @@
-import {en, es, ca, jp} from './langs'
+import {en, es, ca, ja} from './langs'
 
 export const languages = {
   en: "English",
   es: "Español",
   ca: "Català",
-  jp: "日本語",
+  ja: "日本語",
 };
 
 export const defaultLang = "en";
@@ -13,5 +13,5 @@ export const ui = {
   en,
   es,
   ca,
-  jp,
+  ja,
 } as const;

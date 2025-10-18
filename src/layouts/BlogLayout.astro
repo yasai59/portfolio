@@ -1,0 +1,72 @@
+---
+import "@fontsource/fira-code";
+import "@fontsource/fira-mono";
+
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/public-sans";
+
+// Supports weights 100-700
+import '@fontsource-variable/m-plus-1-code';
+// Supports weights 100-900
+import '@fontsource-variable/m-plus-2';
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+
+import "../styles/global.css";
+import "../styles/blogStyles.css";
+
+interface Props {
+  title: string;
+};
+
+const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const copyText = t("general.copy");
+const copiedText = t("general.copied");
+---
+
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <script is:inline define:vars={{copyText, copiedText}}>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("pre > code").forEach((codeBlock) => {
+          const button = document.createElement("button");
+          const text = copyText;
+
+          button.innerText = text;
+          button.className = "copy-btn absolute top-2 right-2 bg-gray-700 text-white text-xs px-2 py-1 rounded hover:bg-gray-600";
+
+          const pre = codeBlock.parentNode;
+          pre.style.position = "relative";
+          pre.appendChild(button);
+
+          button.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(codeBlock.innerText);
+              button.innerText = copiedText;
+              setTimeout(() => (button.innerText = copyText), 1500);
+            } catch (err) {
+              console.error("Error al copiar:", err);
+            }
+          });
+        });
+    });
+    </script>
+    <title>{title}</title>
+  </head>
+  <body
+    class="font-sans bg-background min-h-screen text-primary w-screen overflow-x-hidden"
+  >
+    <slot />
+  </body>
+</html>

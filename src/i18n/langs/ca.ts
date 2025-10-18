@@ -1,12 +1,20 @@
-const ca = {
+import en from './en.js';
+
+const ca: typeof en = {
   "general.name": "Alejandro",
   "general.surname": "Vidal Casado",
   "general.firstSurname": "Vidal",
+  "general.copy": "Copiar",
+  "general.copied": "¡Copiado!",
   "nav.home": "Inici",
+  "nav.blog": "Blog",
   "nav.about": "Sobre mi",
   "nav.studies": "Estudis",
   "hero.title": "Estudiant a la FIB",
   "hero.scrollText": "llisca per continuar",
+  "blog.title": "Blog",
+  "blog.seeMore": "Veure més...",
+  "blog.toc": "Taula de continguts",
   "about.title": "Sobre mi",
   "studies.title": "Estudis",
   "studies.CS": "Enginyeria informàtica",

@@ -15,15 +15,15 @@ const t = useTranslations(lang);
   >
     <div id="footer-title" class="relative row-start-2 lg:row-start-1">
       <div class="relative">
-        <h2 class="text-5xl lg:text-7xl text-right font-semibold flex min-w-min">
+        <h2 class={`${lang == "ja" ? "text-5xl" : "text-6xl"} lg:text-7xl text-right font-semibold flex min-w-min`}>
           {t('general.name')} <br /> {t('general.firstSurname')}
         </h2>
-        <p class="absolute bottom-0 left-0 text-secondary" set:html={t('footer.title')}/>
+        <p class="absolute bottom-2 left-0 text-secondary text-xs" set:html={t('footer.title')}/>
       </div>
     </div>
     <div class="lg:ml-20 col-start-1 lg:col-start-2">
-      <SectionTitle>Contact</SectionTitle>
-      <p class="font-mono pt-15">
+      <SectionTitle>{t('contact.title')}</SectionTitle>
+      <p class="font-mono pt-15 md:w-3/4">
         {t("footer.contact.text")}
       </p>
       <div class="grid lg:grid-cols-2 mt-4">

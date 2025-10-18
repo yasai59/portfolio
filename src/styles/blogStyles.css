@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@tailwind utilities;  
+pre {
+  @apply px-0;
+}
+
+pre code {
+  @apply flex flex-col gap-0;
+}
+
+pre .line {
+  @apply px-4;
+}
+
+/* ———————————————————————————— */
+/* 1. transformerNotationDiff */
+pre.has-diff .line.diff {
+  @apply relative;
+}
+
+pre.has-diff .line.diff.add {
+  @apply bg-green-500/10;
+}
+
+pre.has-diff .line.diff.remove {
+  @apply bg-red-500/10;
+}
+
+pre.has-diff .line.diff.add::before {
+  content: "+ ";
+  @apply absolute left-2 font-bold text-green-500;
+}
+
+pre.has-diff .line.diff.remove::before {
+  content: "– ";
+  @apply absolute left-2 font-bold text-red-500;
+}
+
+/* ———————————————————————————— */
+/* 2. transformerNotationFocus */
+pre.has-focused .line {
+  @apply opacity-60 blur-[2px] transition-all;
+}
+
+pre.has-focused .line.focused {
+  @apply opacity-100 blur-none bg-indigo-500/10 pl-[0.5rem];
+}
+
+/* ———————————————————————————— */
+/* 3. transformerMetaHighlight */
+pre .line.highlighted {
+  @apply bg-indigo-500/10 border-l-4 border-indigo-500 pl-2 -ml-1;
+}
+
+/* ———————————————————————————— */
+/* 4. transformerNotationWordHighlight / MetaWordHighlight */
+pre .highlighted-word {
+  @apply bg-yellow-500/20 rounded px-1 font-medium;
+}
+
+/* ———————————————————————————— */
+/* 5. transformerNotationErrorLevel */
+pre .line.error {
+  @apply bg-red-500/10 border-l-4 border-red-500 pl-2 -ml-1;
+}
+
+pre .line.warning {
+  @apply bg-yellow-500/10 border-l-4 border-yellow-500 pl-2 -ml-1;
+}

@@ -1,12 +1,20 @@
-const jp = {
+import en from './en.js';
+
+const jp: typeof en = {
   "general.name": "アレハンドロ",
   "general.surname": "ヴィダル カサド",
   "general.firstSurname": "ヴィダル",
-  "nav.home": "内",
+  "general.copy": "コピー",
+  "general.copied": "コピーしました！",
+  "nav.home": "ホーム",
+  "nav.blog": "ブログ",
   "nav.about": "私のこと",
-  "nav.studies": "勉強",
+  "nav.studies": "学歴",
   "hero.title": "FIBで大学生",
   "hero.scrollText": "下にスクロールして続行",
+  "blog.title": "ブログ",
+  "blog.seeMore": "もっと見る...",
+  "blog.toc": "目次",
   "about.title": "私のこと",
   "studies.title": "学歴",
   "studies.CS": "コンピュータ工学",
