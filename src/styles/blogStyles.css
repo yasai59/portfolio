@@ -1,7 +1,7 @@
 @import "./global.css";
 
 #blog-content {
-  @apply prose prose-code:font-mono prose-code:text-sm dark:prose-invert max-w-none;
+  @apply prose-code:font-mono prose-code:text-sm prose-invert max-w-none;
 }
 
 /* ======================================================================== */
