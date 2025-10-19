@@ -8,14 +8,14 @@ const t = useTranslations(lang);
 
 <header class="text-mono min-h-43 overflow-hidden grow-0">
   <div class="flex justify-between items-center h-24 w-full container m-auto">
-    <h2>{t('general.name')} <br /> {t('general.surname')}</h2>
+    <h2>{t("general.name")} <br /> {t("general.surname")}</h2>
 
     <!-- NAVBAR -->
-    <nav class="hidden gap-4 md:flex">
-      <a href={`/${lang}#home`} class="anim-underline">{t('nav.home')}</a>
-      <a href={`/${lang}#blog`} class="anim-underline">{t('nav.blog')}</a>
-      <a href={`/${lang}#about`} class="anim-underline">{t('nav.about')}</a>
-      <a href={`/${lang}#studies`} class="anim-underline">{t('nav.studies')}</a>
+    <nav class="hidden gap-6 md:flex">
+      <a href={`/${lang}#home`} class="anim-underline">{t("nav.home")}</a>
+      <a href={`/${lang}#blog`} class="anim-underline">{t("nav.blog")}</a>
+      <a href={`/${lang}#about`} class="anim-underline">{t("nav.about")}</a>
+      <a href={`/${lang}#studies`} class="anim-underline">{t("nav.studies")}</a>
       <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
 
@@ -47,9 +47,9 @@ const t = useTranslations(lang);
   <!-- NAVBAR MOBILE -->
   <div class="hidden w-full container md:hidden pb-5" id="nav-mobile">
     <nav class="gap-4 flex-col bg-background">
-      <a href="#home" class="anim-underline">{t('nav.home')}</a>
-      <a href="#about" class="anim-underline">{t('nav.about')}</a>
-      <a href="#studies" class="anim-underline">{t('nav.studies')}</a>
+      <a href="#home" class="anim-underline">{t("nav.home")}</a>
+      <a href="#about" class="anim-underline">{t("nav.about")}</a>
+      <a href="#studies" class="anim-underline">{t("nav.studies")}</a>
       <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
   </div>
