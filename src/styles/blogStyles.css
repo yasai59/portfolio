@@ -68,7 +68,7 @@
 /* BLOCKS AND IMAGES                                                        */
 /* =========================================================================*/
 #blog-content blockquote {
-  @apply border-l-4 border-primary/50 bg-gray-100 dark:bg-gray-800/60 italic px-4 py-2;
+  @apply border-l-4 border-primary/50 bg-gray-800/60 italic px-4 py-2;
 }
 
 #blog-content img {
@@ -76,7 +76,7 @@
 }
 
 #blog-content pre {
-  @apply bg-gray-100 dark:bg-gray-800 rounded-lg overflow-x-auto;
+  @apply bg-gray-800 rounded-lg overflow-x-auto;
 }
 
 /* ======================================================================== */
