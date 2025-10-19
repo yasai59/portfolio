@@ -6,6 +6,7 @@ const ca: typeof en = {
   "general.firstSurname": "Vidal",
   "general.copy": "Copiar",
   "general.copied": "¡Copiado!",
+  "general.back": "Tornar",
   "nav.home": "Inici",
   "nav.blog": "Blog",
   "nav.about": "Sobre mi",
@@ -14,7 +15,7 @@ const ca: typeof en = {
   "hero.title": "Estudiant a la FIB",
   "hero.scrollText": "llisca per continuar",
   "blog.title": "Blog",
-  "blog.seeMore": "Veure més...",
+  "blog.seeMore": "Més blogs...",
   "blog.toc": "Taula de continguts",
   "about.title": "Sobre mi",
   "studies.title": "Estudis",
@@ -23,11 +24,11 @@ const ca: typeof en = {
   "studies.SMIX": "Sistemes Microinformàtics y Xarxes",
   "studies.bobsays": "Posa't sobre els elements de la taula per veure mes detalls",
   "studies.CS.detail": "Estic estudiant aixó i m'encanta!",
-  "studies.DAW.detail": "Vaig obtindre el millor expedient a catalunya - GPA: 3.98",
+  "studies.DAW.detail": "Vaig obtindre el millor expedient a Catalunya - GPA: 3.98",
   "studies.SMIX.detail": "El millor de classe!",
   "contact.title": "Contacte",
   "footer.contact.text":
-    "Si voldries contactar amb mi, sent-te lliure de contactar-me per aqui",
+    "Si voldries contactar amb mi, pots fer-ho des d'aquí",
   "footer.title": "Desenvolupador Web <br/> & Estudiant"
 };
 

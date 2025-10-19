@@ -35,6 +35,22 @@ const copiedText = t("general.copied");
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      // cuando haces click, se genera un cuadrado debajo de tu cursor
+      document.addEventListener("click", (e) => {
+        const ripple = document.createElement("div");
+        ripple.classList.add("ripple");
+        ripple.style.left = `${e.pageX}px`;
+        ripple.style.top = `${e.pageY}px`;
+
+        document.body.appendChild(ripple);
+
+        // Eliminar el elemento después de la animación
+        ripple.addEventListener("animationend", () => {
+          ripple.remove();
+        });
+      });
+    </script>
     <script is:inline define:vars={{ copyText, copiedText }}>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("pre > code").forEach((codeBlock) => {

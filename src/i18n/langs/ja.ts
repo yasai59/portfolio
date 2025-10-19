@@ -6,6 +6,7 @@ const jp: typeof en = {
   "general.firstSurname": "ヴィダル",
   "general.copy": "コピー",
   "general.copied": "コピーしました！",
+  "general.back": "戻る",
   "nav.home": "ホーム",
   "nav.blog": "ブログ",
   "nav.about": "私のこと",
@@ -27,7 +28,7 @@ const jp: typeof en = {
   "studies.SMIX.detail": "居室の一番!",
   "contact.title": "連絡",
   "footer.contact.text":
-    "私とつながりたかったら、次の選択肢を使ってください",
+    "私に連絡したかったら次の選択肢を使ってください",
   "footer.title": "ウェブ開発者 <br/> & 大学生"
 };
 
