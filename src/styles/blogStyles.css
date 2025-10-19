@@ -1,5 +1,103 @@
 @import "./global.css";
 
+#blog-content {
+  @apply prose prose-code:font-mono prose-code:text-sm dark:prose-invert max-w-none;
+}
+
+/* ======================================================================== */
+/* HEADINGS                                                                 */
+/* =========================================================================*/
+#blog-content h2{
+  @apply font-bold text-4xl;
+}
+
+#blog-content h2 > a {
+  @apply text-inherit;
+}
+
+#blog-content h3 {
+  @apply font-bold text-3xl;
+}
+
+#blog-content h3>a {
+  @apply text-inherit;
+}
+
+#blog-content h4 {
+  @apply font-bold text-2xl;
+}
+#blog-content h4>a {
+  @apply text-inherit;
+}
+
+#blog-content h5 {
+  @apply font-bold text-xl;
+}
+#blog-content h5>a {
+  @apply text-primary;
+}
+
+#blog-content h6 {
+  @apply font-bold text-lg;
+}
+
+#blog-content h6>a {
+  @apply text-primary;
+}
+/* ======================================================================== */
+/* ANCHORS                                                                  */
+/* =========================================================================*/
+#blog-content .toc-link {
+  @apply text-inherit;
+}
+
+
+#blog-content a {
+  @apply no-underline relative text-blue-300;
+}
+
+#blog-content a::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-full h-[0.1rem] bg-current transform scale-x-0 origin-left transition-transform duration-500 ease-in-out;
+}
+
+#blog-content a:hover::after {
+  @apply scale-x-100;
+}
+/* ======================================================================== */
+/* BLOCKS AND IMAGES                                                        */
+/* =========================================================================*/
+#blog-content blockquote {
+  @apply border-l-4 border-primary/50 bg-gray-100 dark:bg-gray-800/60 italic px-4 py-2;
+}
+
+#blog-content img {
+  @apply rounded-lg mx-auto max-h-[40rem];
+}
+
+#blog-content pre {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-lg overflow-x-auto;
+}
+
+/* ======================================================================== */
+/* LISTS                                                                    */
+/* =========================================================================*/
+#blog-content ul {
+  @apply list-disc;
+}
+
+#blog-content ol {
+  @apply list-decimal;
+}
+
+#blog-content ol ol {
+  @apply list-[upper-roman];
+}
+
+/* ======================================================================= */
+/* Styles for code blocks with Shiki Transformers features */
+/* ======================================================================= */
+
 pre {
   @apply px-0;
 }
@@ -12,7 +110,6 @@ pre .line {
   @apply px-4;
 }
 
-/* ———————————————————————————— */
 /* 1. transformerNotationDiff */
 pre.has-diff .line.diff {
   @apply relative;
@@ -36,34 +133,30 @@ pre.has-diff .line.diff.remove::before {
   @apply absolute left-2 font-bold text-red-500;
 }
 
-/* ———————————————————————————— */
 /* 2. transformerNotationFocus */
 pre.has-focused .line {
   @apply opacity-60 blur-[2px] transition-all;
 }
 
 pre.has-focused .line.focused {
-  @apply opacity-100 blur-none bg-indigo-500/10 pl-[0.5rem];
+  @apply opacity-100 blur-none;
 }
 
-/* ———————————————————————————— */
 /* 3. transformerMetaHighlight */
 pre .line.highlighted {
-  @apply bg-indigo-500/10 border-l-4 border-indigo-500 pl-2 -ml-1;
+  @apply bg-indigo-500/10 border-l-4 border-indigo-500 pl-3;
 }
 
-/* ———————————————————————————— */
 /* 4. transformerNotationWordHighlight / MetaWordHighlight */
 pre .highlighted-word {
-  @apply bg-yellow-500/20 rounded px-1 font-medium;
+  @apply bg-yellow-500/30 rounded px-1 font-medium;
 }
 
-/* ———————————————————————————— */
 /* 5. transformerNotationErrorLevel */
 pre .line.error {
-  @apply bg-red-500/10 border-l-4 border-red-500 pl-2 -ml-1;
+  @apply bg-red-500/10 border-l-4 border-red-500 pl-3;
 }
 
 pre .line.warning {
-  @apply bg-yellow-500/10 border-l-4 border-yellow-500 pl-2 -ml-1;
+  @apply bg-yellow-500/10 border-l-4 border-yellow-500 pl-3;
 }

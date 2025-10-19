@@ -10,6 +10,7 @@ const jp: typeof en = {
   "nav.blog": "ブログ",
   "nav.about": "私のこと",
   "nav.studies": "学歴",
+  "nav.clickToClose": "メニューを閉じるのにこのエリアの外をクリックしてください",
   "hero.title": "FIBで大学生",
   "hero.scrollText": "下にスクロールして続行",
   "blog.title": "ブログ",

@@ -2,21 +2,32 @@
 import LanguageSelector from "./LanguageSelector.astro";
 
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
+
+interface Props {
+  showName?: boolean;
+};
+
+const { showName = true } = Astro.props;
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <header class="text-mono min-h-43 overflow-hidden grow-0">
   <div class="flex justify-between items-center h-24 w-full container m-auto">
-    <h2>{t("general.name")} <br /> {t("general.surname")}</h2>
-
+    {
+      showName 
+        ? 
+          (<h2>{t("general.name")} <br /> {t("general.surname")}</h2>) 
+        : 
+          <div class="hidden md:block"></div>
+    }
     <!-- NAVBAR -->
     <nav class="hidden gap-6 md:flex">
       <a href={`/${lang}#home`} class="anim-underline">{t("nav.home")}</a>
       <a href={`/${lang}#blog`} class="anim-underline">{t("nav.blog")}</a>
       <a href={`/${lang}#about`} class="anim-underline">{t("nav.about")}</a>
       <a href={`/${lang}#studies`} class="anim-underline">{t("nav.studies")}</a>
-      <!-- <a href="/projects" class="anim-underline">Projects</a> -->
     </nav>
 
     <!-- mobile navbar button -->
@@ -44,26 +55,51 @@ const t = useTranslations(lang);
     <LanguageSelector />
   </div>
 
-  <!-- NAVBAR MOBILE -->
-  <div class="hidden w-full container md:hidden pb-5" id="nav-mobile">
-    <nav class="gap-4 flex-col bg-background">
-      <a href="#home" class="anim-underline">{t("nav.home")}</a>
-      <a href="#about" class="anim-underline">{t("nav.about")}</a>
-      <a href="#studies" class="anim-underline">{t("nav.studies")}</a>
-      <!-- <a href="/projects" class="anim-underline">Projects</a> -->
-    </nav>
+  <div class="h-lvh w-lvw top-0 absolute bg-gray-900/50 z-50 hidden" id="nav-mobile">
+    <div class="w-3/4 h-lvh bg-background transition-transform duration-300 -translate-x-full flex flex-col" id="nav-mobile">
+      <nav class="gap-4 flex flex-col pt-40 px-10 grow-1">
+        <a href={`/${lang}#home`} class="anim-underline">{t("nav.home")}</a>
+        <a href={`/${lang}#blog`} class="anim-underline">{t("nav.blog")}</a>
+        <a href={`/${lang}#about`} class="anim-underline">{t("nav.about")}</a>
+        <a href={`/${lang}#studies`} class="anim-underline">{t("nav.studies")}</a>
+      </nav>
+      <p class="font-mono px-10 text-right text-xs pb-20">
+        {t("nav.clickToClose")}
+      </p>
+    </div>
+    <div class="w-1/4 h-lvh absolute right-0 top-0" id="exit-mobile-nav">
+    </div>
   </div>
 </header>
 
-<!-- JavaScript para toggle -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("mobile-menu-toggle");
     const navMobile = document.getElementById("nav-mobile");
+    const exitZone = document.getElementById("exit-mobile-nav");
+    const links = navMobile?.querySelectorAll("a") as NodeListOf<HTMLElement>;
+    const navMobileContent = navMobile?.firstElementChild;
 
+    const closeNav = () => {
+      document.body.style.overflow = "auto";
+      navMobileContent?.classList.add("-translate-x-full");
+      setTimeout(() => {
+        navMobile?.classList.add("hidden");
+      }, 300);
+    };
+
+    exitZone?.addEventListener("click", closeNav);
+    
+    links?.forEach((link: HTMLElement) => {
+      link.addEventListener("click", closeNav);
+    });
+    
     toggleBtn?.addEventListener("click", () => {
-      navMobile?.classList.toggle("hidden");
-      navMobile?.classList.toggle("flex");
+      document.body.style.overflow = "hidden";
+      navMobile?.classList.remove("hidden");
+      setTimeout(() => {
+        navMobileContent?.classList.remove("-translate-x-full");
+      }, 100);
     });
   });
 </script>

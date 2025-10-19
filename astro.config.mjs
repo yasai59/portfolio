@@ -12,6 +12,7 @@ import {
   transformerMetaHighlight,
   transformerNotationWordHighlight,
   transformerNotationErrorLevel,
+  transformerNotationHighlight,
   transformerMetaWordHighlight,
 } from '@shikijs/transformers'
 
@@ -20,14 +21,16 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   markdown: {
+    syntaxHighlight: 'shiki',
     shikiConfig: {
       theme: 'tokyo-night',
       transformers: [
         transformerNotationDiff(),
+        transformerNotationWordHighlight(),
+        transformerNotationHighlight(),
+        transformerMetaWordHighlight(),
         transformerNotationFocus(),
         transformerMetaHighlight(),
-        transformerNotationWordHighlight(),
-        transformerMetaWordHighlight(),
         transformerNotationErrorLevel(),
       ],
     },

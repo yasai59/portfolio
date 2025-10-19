@@ -10,6 +10,7 @@ const ca: typeof en = {
   "nav.blog": "Blog",
   "nav.about": "Sobre mi",
   "nav.studies": "Estudis",
+  "nav.clickToClose": "Fes clic fora d'aquesta àrea per tancar el menú",
   "hero.title": "Estudiant a la FIB",
   "hero.scrollText": "llisca per continuar",
   "blog.title": "Blog",

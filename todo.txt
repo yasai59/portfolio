@@ -1,8 +1,2 @@
-quitar el nombre en la pantalla de inicio
-mirar contact en firefox
-rediseño del about me 
-padding movil hero
-movil nav
-acabar blog
+rediseño del about me
 selector de idiomas cambiarlo
-imagenes en blogs

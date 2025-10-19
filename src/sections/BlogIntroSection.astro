@@ -1,13 +1,28 @@
 ---
+import BlogPreview from "../components/BlogPreview.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getCollection } from "astro:content";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+// the last 3 posts in the current language
+const posts = (await getCollection("blog")).filter((p: any) => p.slug.startsWith(Astro.params.lang)).sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+}).slice(0, 3);
 ---
 
 <section class="container-force m-auto" id="blog">
   <SectionTitle>{t("blog.title")}</SectionTitle>
+  <div class="flex gap-2 flex-wrap mt-10 mb-5">
+    {
+      posts.map((post) => (
+        <div class="w-100">
+          <BlogPreview post={post as any} />
+        </div>
+      ))
+    }
+  </div>
   <a href={`/${lang}/blog`} class="anim-underline">{t("blog.seeMore")}</a>
 </section>
 
