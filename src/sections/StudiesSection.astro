@@ -7,67 +7,73 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <section class="container-force shrink-0" id="studies">
   <div class="w-full items-center flex justify-between">
-    <SectionTitle>{t('studies.title')}</SectionTitle>
+    <SectionTitle>{t("studies.title")}</SectionTitle>
     <div class="flex items-center">
-      <p class="mr-4 font-mono hidden lg:block" id="changing-text">{t('studies.bobsays')}</p>
+      <p class="mr-4 font-mono hidden lg:block" id="changing-text">
+        {t("studies.bobsays")}
+      </p>
       <Bob />
     </div>
   </div>
-  <div class="mt-20 border-secondary rounded-3xl border-2 w-full overflow-clip" id="studies-list">
+  <div
+    class="mt-20 border-secondary rounded-3xl border-2 w-full overflow-clip"
+    id="studies-list"
+  >
     <ListItem
       fecha="2024-2028"
-      nombre={t('studies.CS')}
+      nombre={t("studies.CS")}
       centro="FIB - UPC"
-      detalle={t('studies.CS.detail')}
+      detalle={t("studies.CS.detail")}
     />
     <ListItem
       fecha="2022-2024"
-      nombre={t('studies.DAW')}
+      nombre={t("studies.DAW")}
       centro="Jaume Viladoms"
-      detalle={t('studies.DAW.detail')}
+      detalle={t("studies.DAW.detail")}
     />
     <ListItem
       fecha="2020-2022"
-      nombre={t('studies.SMIX')}
+      nombre={t("studies.SMIX")}
       centro="Jaume Viladoms"
-      detalle={t('studies.SMIX.detail')}
+      detalle={t("studies.SMIX.detail")}
     />
   </div>
 </section>
 
 <script>
-const changingText = document.getElementById('changing-text');
-const studiesList = document.getElementById('studies-list')
-const studiesItems = document.querySelectorAll('.studies-item') as NodeListOf<HTMLElement>;
-let originalText = changingText?.innerText as string;
-let hovered = false;
+  const changingText = document.getElementById("changing-text");
+  const studiesList = document.getElementById("studies-list");
+  const studiesItems = document.querySelectorAll(
+    ".studies-item",
+  ) as NodeListOf<HTMLElement>;
+  let originalText = changingText?.innerText as string;
+  let hovered = false;
 
-studiesList?.addEventListener('mouseleave', () => {
-  hovered = false;
-  setTimeout(() => {
-    if(changingText && !hovered){
-      changingText.innerText = originalText;
-    }
-  }, 400)
-})
-
-studiesList?.addEventListener('mouseenter', () => {
-  hovered = true;
-})
-
-studiesItems.forEach((Item) => {
-  Item.addEventListener('mouseenter', () => {
+  studiesList?.addEventListener("mouseleave", () => {
+    hovered = false;
     setTimeout(() => {
-      if(changingText){
-        changingText.innerText = Item.dataset.detalle ?? '';
+      if (changingText && !hovered) {
+        changingText.innerText = originalText;
       }
-    }, 100)
-  })
-})
+    }, 400);
+  });
 
+  studiesList?.addEventListener("mouseenter", () => {
+    hovered = true;
+  });
+
+  studiesItems.forEach((Item) => {
+    Item.addEventListener("mouseenter", () => {
+      setTimeout(() => {
+        if (changingText) {
+          changingText.innerText = Item.dataset.detalle ?? "";
+        }
+      }, 100);
+    });
+  });
 </script>
+

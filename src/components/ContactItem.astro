@@ -21,7 +21,8 @@ const { icon, href, text, bottom_text } = Astro.props;
       href={href}
       class="flex group-hover:text-primary transition-all duration-200"
       target="_blank"
-      >{bottom_text}
+      >
+      <p class="whitespace-nowrap">{bottom_text}</p>
       <Icon
         name="mdi:arrow-up"
         class="rotate-45 group-hover:text-primary group-hover:rotate-[65deg] transition-all duration-200"

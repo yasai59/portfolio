@@ -10,6 +10,7 @@ const es: typeof en = {
   "nav.blog": "Blog",
   "nav.about": "Sobre mi",
   "nav.studies": "Estudios",
+  "nav.clickToClose": "Haz clic fuera de esta área para cerrar el menú",
   "hero.title": "Estudiante en la FIB",
   "hero.scrollText": "Desliza para continuar",
   "blog.title": "Blog",

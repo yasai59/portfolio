@@ -8,6 +8,7 @@ const en = {
   "nav.blog": "Blog",
   "nav.about": "About",
   "nav.studies": "Studies",
+  "nav.clickToClose": "Click outside this area to close the menu",
   "hero.title": "Student at FIB",
   "hero.scrollText": "Scroll down to continue",
   "blog.title": "Blog",

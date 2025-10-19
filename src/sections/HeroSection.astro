@@ -10,9 +10,12 @@ const t = useTranslations(lang);
 ---
 
 <section
-  class="container m-auto grow-1 flex flex-col items-center max-w-screen"
+  class="container m-auto grow-1 flex flex-col items-center max-w-screen relative"
   id="home"
 >
+<div id="squares-parent" class="absolute w-full h-full pointer-events-none top-0 left-0 overflow-hidden">
+</div>
+<div class="grow-1 flex flex-col justify-center items-center md:justify-normal">
   <h1
     class="text-4xl sm:text-6xl md:text-8xl font-black mb-5 font-mono text-center flex flex-col items-center"
   >
@@ -21,23 +24,18 @@ const t = useTranslations(lang);
     <div class="block h-1 w-30 bg-primary rounded-sm my-4 xs:my-10"></div>
     {t("hero.title")}
   </h1>
-  <div class="grow-1">
-    <div class="flex-col flex items-center sm:flex-row sm:items-end">
-      <Bob />
-      <!-- <a -->
-      <!--   href="https://home.yasai59.com" -->
-      <!--   class="h-12 px-10 bg-white max-w-70 text-background rounded-lg sm:mx-5 my-5 sm:my-0 leading italic button-text flex items-center justify-center" -->
-      <!-- > -->
-      <!--   See all my projects -->
-      <!-- </a> -->
-      <a
-        href={`/CV/${lang}/CV Alejandro Vidal Casado.pdf`}
-        target="_blank"
-        class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text mx-5 my-5 sm:my-0"
-      >
-        <p class="mr-3">CV</p>
-        <Icon name="mdi:tray-download" />
-      </a>
+    <div class="">
+      <div class="flex-col flex items-center sm:flex-row sm:items-end">
+        <Bob />
+        <a
+          href={`/CV/${lang}/CV Alejandro Vidal Casado.pdf`}
+          target="_blank"
+          class="h-12 px-3 bg-white text-background rounded-lg flex items-center w-min button-text mx-5 my-5 sm:my-0"
+        >
+          <p class="mr-3">CV</p>
+          <Icon name="mdi:tray-download" />
+        </a>
+      </div>
     </div>
   </div>
   <div class="text-center mt-3">
@@ -53,7 +51,7 @@ const t = useTranslations(lang);
 <script>
   import gsap from "gsap";
 
-  const heroSection = document.getElementById("home");
+  const heroSection = document.getElementById("squares-parent");
 
   const scrollBtn = document.getElementById("scroll-arrow");
 
@@ -119,15 +117,32 @@ const t = useTranslations(lang);
     );
   }
 
-  let activeWindow = true;
+  // let activeWindow = true;
 
-  document.addEventListener("visibilitychange", () => {
-    activeWindow = !document.hidden;
-  });
+  // document.addEventListener("visibilitychange", () => {
+  //   activeWindow = !document.hidden;
+  // });
 
-  setInterval(() => {
-    if (activeWindow) {
+  //  setInterval(() => {
+  //   if (activeWindow) {
+  //     createSquare();
+  //   }
+  // }, 1000); // frecuencia de creación
+
+let lastTime = 0;
+const interval = 1500; 
+
+// bucle principal
+function loop(time: number) {
+  if (!document.hidden) { // solo si la pestaña está visible
+    if (time - lastTime >= interval) {
       createSquare();
+      lastTime = time;
     }
-  }, 1000); // frecuencia de creación
+  }
+  requestAnimationFrame(loop);
+}
+
+// iniciar el bucle
+requestAnimationFrame(loop);
 </script>
