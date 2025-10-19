@@ -6,6 +6,7 @@ const es: typeof en = {
   "general.firstSurname": "Vidal",
   "general.copy": "Copiar",
   "general.copied": "¡Copiado!",
+  "general.back": "Volver",
   "nav.home": "Inicio",
   "nav.blog": "Blog",
   "nav.about": "Sobre mi",
@@ -14,20 +15,20 @@ const es: typeof en = {
   "hero.title": "Estudiante en la FIB",
   "hero.scrollText": "Desliza para continuar",
   "blog.title": "Blog",
-  "blog.seeMore": "Ver más...",
+  "blog.seeMore": "Más blogs...",
   "blog.toc": "Tabla de Contenidos",
   "about.title": "Sobre mi",
   "studies.title": "Estudios",
   "studies.CS": "Ingeniería informática",
   "studies.DAW": "Desarrollo de Aplicaciones Web",
   "studies.SMIX": "Sistemas Microinformáticos y Redes",
-  "studies.bobsays": "Ponte sobre los elementos de la lista para ver mas detalles",
+  "studies.bobsays": "Ponte sobre los elementos de la lista para ver más detalles",
   "studies.CS.detail": "Estoy estudiando esto y me encanta!",
-  "studies.DAW.detail": "Obtuve el mejor expdiente de cataluña - GPA: 3.98",
+  "studies.DAW.detail": "Obtuve el mejor expediente de Cataluña - GPA: 3.98",
   "studies.SMIX.detail": "El mejor de clase!",
   "contact.title": "Contacto",
   "footer.contact.text":
-    "Si te gustaria ponerte en contacto conmigo, sientete libre de contactarme por aqui",
+    "Si te gustaría ponerte en contacto conmigo, puedes hacerlo desde aquí",
   "footer.title": "Desarrollador Web <br/> & Estudiante"
 };
 

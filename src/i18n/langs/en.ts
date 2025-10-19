@@ -4,6 +4,7 @@ const en = {
   "general.firstSurname": "Vidal",
   "general.copy": "Copy",
   "general.copied": "Copied!",
+  "general.back": "Go back",
   "nav.home": "Home",
   "nav.blog": "Blog",
   "nav.about": "About",
@@ -12,7 +13,7 @@ const en = {
   "hero.title": "Student at FIB",
   "hero.scrollText": "Scroll down to continue",
   "blog.title": "Blog",
-  "blog.seeMore": "See more...",
+  "blog.seeMore": "More blogs...",
   "blog.toc": "Table of Contents",
   "about.title": "About me",
   "studies.title": "Studies",
@@ -21,11 +22,11 @@ const en = {
   "studies.SMIX": "Microcomputer Systems and Networks",
   "studies.bobsays": "Hover over the list items to see details",
   "studies.CS.detail": "Currently studying this and I love it",
-  "studies.DAW.detail": "Obtained the best expedient in catalonia - GPA: 3.98",
+  "studies.DAW.detail": "Obtained the best expedient in Catalonia - GPA: 3.98",
   "studies.SMIX.detail": "The best of my classroom!",
   "contact.title": "Contact",
   "footer.contact.text":
-    "If you would like to get in touch with me, feel free to use the following methods",
+    "If you would like to get in touch with me, you can reach me from here",
   "footer.title": "Web Developer <br/> & Student"
 };
 

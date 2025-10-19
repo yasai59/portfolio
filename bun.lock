@@ -22,6 +22,7 @@
         "tailwindcss": "^4.1.5",
       },
       "devDependencies": {
+        "@iconify-json/lets-icons": "^1.2.1",
         "@iconify-json/mdi": "^1.2.3",
         "@rehype-pretty/transformers": "^0.13.2",
         "@shikijs/transformers": "^3.13.0",
@@ -129,6 +130,8 @@
     "@fontsource/fira-code": ["@fontsource/fira-code@5.2.6", "", {}, "sha512-wCkIpPm0BqlkCPLYeY4Vui96ODmVUV0/GpEe3OfJ4v8EJn/BF2SlyxvarFsTs1CKiGjrO2cXlIZbBrKi9F+hUQ=="],
 
     "@fontsource/fira-mono": ["@fontsource/fira-mono@5.2.6", "", {}, "sha512-6pyiGeFH+5DP5sICSwx5wu+9BlTEMTKki7bTppsEqXJysi1MiK82n6oSUaYkQWRLH51+DK7zv2JJsi82cOIS3g=="],
+
+    "@iconify-json/lets-icons": ["@iconify-json/lets-icons@1.2.1", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-ahSTwg1OTccHNEy3E1GuoRgazGpodIEbdjWp1V/7abur7efjTbtJyHfWVPRBF7yIWg0I8MKXrSGAkVVS1D1q8w=="],
 
     "@iconify-json/material-symbols": ["@iconify-json/material-symbols@1.2.41", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-lYhQtRot/YtRweG4+yiulU2BKwv63Uuj1z/BNUs9TrSno8nJ6ufiQfi4uXSuvRumMg3kwO35WxZ1ZhPAvbY8bA=="],
 
