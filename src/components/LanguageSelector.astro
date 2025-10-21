@@ -1,23 +1,53 @@
 ---
+import { Icon } from "astro-icon/components";
 import { languages } from "../i18n/ui";
 import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url) ?? "";
 const [, , ...rest] = Astro.url.pathname.split("/");
-const restString = rest.join('/');
-
+const restString = rest.join("/");
 ---
 
-<div class="grid grid-cols-2 gap-x-4" id="lng-selector">
-  {
-    Object.keys(languages).map((lang) => {
-      return (
-       <a href={`/${lang}`} class="anim-underline"
-          onclick={`event.preventDefault(); localStorage.setItem('language', '${lang}'); window.location.href='/${lang}/${restString}';`}>
-          {lang}
-        </a>
-      );
-    })
-  }
+<div class="relative justify-self-end" id="lng-selector">
+  <div
+    class="flex items-center gap-2 p-3 cursor-pointer select-none"
+    id="lang-btn"
+  >
+    <Icon
+      name="mdi:chevron-down"
+      class="transition-transform duration-300 text-2xl"
+      id="lng-chev"
+    />
+    {languages[lang]}
+  </div>
+  <div
+    class="flex-col absolute hidden border-2 border-secondary border-lg bg-black p-3 z-10 rounded-lg"
+    id="lang-menu"
+  >
+    {
+      Object.entries(languages).map(([code, language]) => {
+        return (
+          <a
+            href={`/${code}`}
+            class="anim-underline p-2"
+            onclick={`event.preventDefault(); localStorage.setItem('language', '${code}'); window.location.href='/${code}/${restString}';`}
+          >
+            {language}
+          </a>
+        );
+      })
+    }
+  </div>
 </div>
-
+<script>
+  const langBtn = document.getElementById("lang-btn");
+  const langMenu = document.getElementById("lang-menu");
+  const langChev = document.getElementById("lng-chev");
+  document.addEventListener("DOMContentLoaded", () => {
+    langBtn?.addEventListener("click", () => {
+      langMenu?.classList.toggle("hidden");
+      langMenu?.classList.toggle("flex");
+      langChev?.classList.toggle("rotate-180");
+    });
+  });
+</script>

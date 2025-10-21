@@ -2,118 +2,117 @@
 
 /* anchor underline animation */
 .anim-underline {
-    position: relative;
-    text-decoration: none;
+  position: relative;
+  text-decoration: none;
 }
 
 .anim-underline::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0.1rem;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.1rem;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
 }
 
 .anim-underline:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 /* language selector square */
 #lng-selector {
-    position: relative;
+  position: relative;
 }
 
 #lng-selector::before {
-    content: " ";
-    position: absolute;
-    width: 12rem;
-    height: 12rem;
-    border: 2px solid var(--color-secondary);
-    border-radius: 1rem;
-    transform: rotate(-30deg) translate(1rem, -8rem);
-    transition: all 1s ease;
+  @apply -z-10 absolute;
+  content: " ";
+  width: 12rem;
+  height: 12rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: 1rem;
+  transform: rotate(-30deg) translate(1rem, -8rem);
+  transition: all 1s ease;
 }
 
 #lng-selector:hover::before {
-    transform: rotate(-25deg) translate(1rem, -8rem);
+  transform: rotate(-25deg) translate(1rem, -8rem);
 }
 
 .ripple {
-    @apply absolute w-5 h-5 rounded-sm border-1 border-primary/40;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(1);
-    animation: ripple-animation 0.6s ease-out forwards;
+  @apply absolute w-5 h-5 rounded-sm border-1 border-primary/40;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple-animation 0.6s ease-out forwards;
 }
 
 @keyframes ripple-animation {
-    to {
-        transform: translate(-50%, -50%) scale(4) rotate(20deg);
-        opacity: 0;
-    }
+  to {
+    transform: translate(-50%, -50%) scale(4) rotate(20deg);
+    opacity: 0;
+  }
 }
 
 #scroll-arrow {
-    @apply bg-black;
+  @apply bg-black;
 }
 
 #scroll-arrow::before {
-    content: " ";
-    z-index: -1;
-    @apply w-full h-full border-2 border-secondary absolute rounded-md left-5 bottom-1;
-    animation: rotate 50s infinite linear;
+  content: " ";
+  z-index: -1;
+  @apply w-full h-full border-2 border-secondary absolute rounded-md left-5 bottom-1;
+  animation: rotate 50s infinite linear;
 }
 
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg) translateY(0);
-    }
-    50% {
-        transform: rotate(180deg) translateY(0.4rem);
-    }
-    100% {
-        transform: rotate(360deg) translateY(0);
-    }
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) translateY(0.4rem);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0);
+  }
 }
 
 .container {
-    @apply p-4;
+  @apply p-4;
 }
 
 .button-text {
-    @apply hover:bg-primary/80 transition-all duration-300;
+  @apply hover:bg-primary/80 transition-all duration-300;
 }
 
 .square {
-    @apply absolute border-2 border-secondary rounded-md -z-10;
+  @apply absolute border-2 border-secondary rounded-md -z-10;
 }
 
 #footer-title::before {
-    content: " ";
-    @apply h-110 w-110 lg:w-150 lg:h-150 border-2 border-secondary rounded-xl absolute -left-40 -top-20 rotate-15;
+  content: " ";
+  @apply h-110 w-110 lg:w-150 lg:h-150 border-2 border-secondary rounded-xl absolute -left-40 -top-20 rotate-15;
 }
 
 .button:hover .link-arrow {
-    @apply rotate-20;
+  @apply rotate-20;
 }
 
 .difuminado {
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        black 4rem,
-        black calc(100% - 4rem),
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0px,
-        black 4rem,
-        black calc(100% - 4rem),
-        transparent 100%
-    );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 4rem,
+    black calc(100% - 4rem),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 4rem,
+    black calc(100% - 4rem),
+    transparent 100%
+  );
 }
-

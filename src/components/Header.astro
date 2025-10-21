@@ -5,7 +5,7 @@ import { useTranslations, getLangFromUrl } from "../i18n/utils";
 
 interface Props {
   showName?: boolean;
-};
+}
 
 const { showName = true } = Astro.props;
 
@@ -13,14 +13,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="text-mono min-h-43 overflow-hidden grow-0">
-  <div class="flex justify-between items-center h-24 w-full container m-auto">
+<header class="text-mono min-h-43 grow-0">
+  <div
+    class="grid grid-cols-3 items-center justify-items-center h-24 w-full container m-auto"
+  >
     {
-      showName 
-        ? 
-          (<h2>{t("general.name")} <br /> {t("general.surname")}</h2>) 
-        : 
-          <div class="hidden md:block"></div>
+      showName ? (
+        <h2 class="justify-self-start">
+          {t("general.name")} <br /> {t("general.surname")}
+        </h2>
+      ) : (
+        <div class="hidden md:block" />
+      )
     }
     <!-- NAVBAR -->
     <nav class="hidden gap-6 md:flex">
@@ -31,7 +35,7 @@ const t = useTranslations(lang);
     </nav>
 
     <!-- mobile navbar button -->
-    <nav class="flex md:hidden">
+    <nav class="flex md:hidden justify-self-start md:justify-self-center">
       <button
         class="btn btn-ghost btn-circle cursor-pointer"
         id="mobile-menu-toggle"
@@ -52,23 +56,32 @@ const t = useTranslations(lang);
       </button>
     </nav>
 
+    <div class={`${showName ? "hidden" : "block md:hidden"}`}></div>
+
     <LanguageSelector />
   </div>
 
-  <div class="h-lvh w-lvw top-0 absolute bg-gray-900/50 z-50 hidden" id="nav-mobile">
-    <div class="w-3/4 h-lvh bg-background transition-transform duration-300 -translate-x-full flex flex-col" id="nav-mobile">
+  <div
+    class="h-lvh w-lvw top-0 absolute bg-gray-900/50 z-50 hidden"
+    id="nav-mobile"
+  >
+    <div
+      class="w-3/4 h-lvh bg-background transition-transform duration-300 -translate-x-full flex flex-col"
+      id="nav-mobile"
+    >
       <nav class="gap-4 flex flex-col pt-40 px-10 grow-1">
         <a href={`/${lang}#home`} class="anim-underline">{t("nav.home")}</a>
         <a href={`/${lang}#blog`} class="anim-underline">{t("nav.blog")}</a>
         <a href={`/${lang}#about`} class="anim-underline">{t("nav.about")}</a>
-        <a href={`/${lang}#studies`} class="anim-underline">{t("nav.studies")}</a>
+        <a href={`/${lang}#studies`} class="anim-underline"
+          >{t("nav.studies")}</a
+        >
       </nav>
       <p class="font-mono px-10 text-right text-xs pb-20">
         {t("nav.clickToClose")}
       </p>
     </div>
-    <div class="w-1/4 h-lvh absolute right-0 top-0" id="exit-mobile-nav">
-    </div>
+    <div class="w-1/4 h-lvh absolute right-0 top-0" id="exit-mobile-nav"></div>
   </div>
 </header>
 
@@ -89,11 +102,11 @@ const t = useTranslations(lang);
     };
 
     exitZone?.addEventListener("click", closeNav);
-    
+
     links?.forEach((link: HTMLElement) => {
       link.addEventListener("click", closeNav);
     });
-    
+
     toggleBtn?.addEventListener("click", () => {
       document.body.style.overflow = "hidden";
       navMobile?.classList.remove("hidden");

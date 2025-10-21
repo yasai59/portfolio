@@ -1,3 +1,4 @@
 rediseño del about me 
-selector de idiomas cambiarlo
+rewrite del boton de tirar hacia atras para que no cambie el idioma
+las paginas que no son la principal se sienten vacias, hay que buscar un fondo o algojustify-between justify-between justify-between 
 rewrite del boton de tirar hacia atras para que no cambie el idioma
