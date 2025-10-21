@@ -1,2 +1,3 @@
 rediseño del about me 
 selector de idiomas cambiarlo
+rewrite del boton de tirar hacia atras para que no cambie el idioma
