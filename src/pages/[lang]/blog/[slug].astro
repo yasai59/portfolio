@@ -7,6 +7,7 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import Prose from "../../../components/Prose.astro";
 import BlogLayout from "../../../layouts/BlogLayout.astro";
 import { Icon } from "astro-icon/components";
+import HeaderFixed from "../../../components/HeaderFixed.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -42,7 +43,8 @@ const constructDate = (dateString: string): string => {
 ---
 
 <BlogLayout title={post.data.title}>
-  <div class="min-h-lvh">
+  <HeaderFixed />
+  <div class="min-h-lvh overflow-hidden">
     <Header />
     <main class="container mx-auto max-w-3xl">
       <!-- go back button -->

@@ -1,9 +1,11 @@
 ---
 title: "Sistemas Microinformáticos y Redes"
-description: "Como fue el ciclo medio"
-date: "2025-10-21"
+description: "Mi paso por el ciclo de grado medio."
+date: "2025-10-20"
 author: "Alejandro Vidal Casado"
 tags: ["studies", "networks"]
+coverImg: "/blog/SMIX/packet_tracer.png"
+altImg: "Un diseño de red hecho con cisco packet tracer"
 ---
 
 ---

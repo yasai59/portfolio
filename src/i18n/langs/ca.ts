@@ -1,11 +1,14 @@
 import en from './en.js';
 
 const ca: typeof en = {
+  "meta.title": "Alejandro Vidal Casado - Desenvolupador Web & Estudiant",
+  "meta.description": "¡Benvingut a la meva pàgina personal! Sóc Alejandro Vidal Casado, un apassionat desenvolupador web i estudiant a la FIB. Explora els meus projectes, blog i coneix més sobre mi.",
+  "meta.bannerAlt": "Imatge de banner que mostra a Bob amb el meu nom al costat.",
   "general.name": "Alejandro",
   "general.surname": "Vidal Casado",
   "general.firstSurname": "Vidal",
   "general.copy": "Copiar",
-  "general.copied": "¡Copiado!",
+  "general.copied": "¡Copiat!",
   "general.back": "Tornar",
   "nav.home": "Inici",
   "nav.blog": "Blog",

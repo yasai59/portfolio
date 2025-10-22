@@ -4,6 +4,8 @@ description: "Mi paso por el ciclo de grado superior."
 date: "2025-10-21"
 author: "Alejandro Vidal Casado"
 tags: ["studies", "web"]
+coverImg: "/blog/DAW/exellence_award.png"
+altImg: "Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña"
 ---
 
 ---
@@ -23,6 +25,9 @@ Sobra decir que también aprendí a **desplegar mis aplicaciones** en diferentes
 - Matrícula de Honor 
 - Mejor expediente académico del centro
 - Mejor expediente académico de Cataluña
+
+![Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña](/blog/DAW/exellence_award.png)
+Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña
 
 ### Tecnologias y conceptos aprendidos
 
@@ -54,13 +59,13 @@ La decisión era sencilla, durante el ciclo de grado medio ya desarrolle el gust
 
 Estos fueron unos de los mejores años de mi formación, iba especificando más lo que quería hacer y descubriendo las tecnologías que hoy en día son mis favoritas.
 
-Aparte de darme conocimientos en programación web, también me ayudó a consolidar conceptos de programación general porque en primero, de web se toca bastante poco, sobretodo eran ejercicios de Java o C++ para practicar, ya que en ese punto no se asume que tengas conceptos básicos de programación.
+Aparte de darme conocimientos en programación web, también me ayudó a **consolidar conceptos de programación general** porque en primero, de web se toca bastante poco, sobretodo eran ejercicios de **Java o C++** para practicar, ya que en ese punto no se asume que tengas conceptos básicos de programación.
 
-Todo esto mezclado hizo que se catapultara mi interés por investigar las tecnologías que tocábamos en clase y fue la época en la que más investigue por mi cuenta. Intentando aprender algo nuevo constantemente, desde detalles como nuevas propiedades de CSS hasta tecnologías desconocidas para mi como Angular, Vue o React. 
+Todo esto mezclado hizo que se catapultara mi **interés por investigar las tecnologías** que tocábamos en clase y fue la época en la que más investigue por mi cuenta. Intentando aprender algo nuevo constantemente, desde detalles como nuevas propiedades de CSS hasta tecnologías desconocidas para mi como **Angular, Vue o React.** 
 
-Al final, la máxima expresión de esto se vio en el proyecto final del ciclo. Donde el tema era crear una aplicación web usando como mínimo las tecnologías aprendidas, acabe haciendo con mi compañero una aplicación web y móvil usando React, React Native y ExpressJS.
+Al final, la máxima expresión de esto se vio en el **proyecto final del ciclo.** Donde el tema era crear una aplicación web usando como mínimo las tecnologías aprendidas, acabe haciendo con mi compañero una aplicación web y móvil usando **React, React Native y ExpressJS.**
 
-La aplicación actualmente no esta subida porque fue el proyecto de clase pero dejo aquí los repositorios con el codigo para que cualquiera que quiera pueda leerlo o desplegarlo en local si le apetece:
+La aplicación actualmente **no esta subida** porque fue el proyecto de clase pero dejo aquí los repositorios con el **código** para que cualquiera que quiera pueda leerlo o desplegarlo en local si le apetece:
 
 - Frontend Web: https://github.com/yasai59/Cheese-web
 - Frontend Móvil: https://github.com/yasai59/Cheese-mobile

@@ -30,8 +30,8 @@
 #lng-selector::before {
   @apply -z-10 absolute;
   content: " ";
-  width: 12rem;
-  height: 12rem;
+  width: 13rem;
+  height: 13rem;
   border: 2px solid var(--color-secondary);
   border-radius: 1rem;
   transform: rotate(-30deg) translate(1rem, -8rem);

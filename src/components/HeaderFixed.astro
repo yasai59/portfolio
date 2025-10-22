@@ -3,28 +3,21 @@ import LanguageSelector from "./LanguageSelector.astro";
 
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 
-interface Props {
-  showName?: boolean;
-}
-
-const { showName = true } = Astro.props;
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="text-mono min-h-43 grow-0">
+<header 
+  class="text-mono grow-0 fixed bg-background/60 backdrop-blur-lg z-10 w-full border-b border-secondary -translate-y-full transition-transform duration-300"
+  id="fixed-header"
+  >
   <div
     class="grid grid-cols-3 items-center justify-items-center h-24 w-full container m-auto"
   >
     {
-      showName ? (
         <h2 class="justify-self-start hidden sm:block">
           <a href={`/${lang}#start`} class="break-keep [line-break:strict] break-words whitespace-normal">{t("general.name")} <br /> {t("general.surname")}</a>
         </h2>
-      ) : (
-        <div class="hidden sm:block" />
-      )
     }
     <!-- NAVBAR -->
     <nav class="hidden gap-6 md:flex break-keep [line-break:strict] break-words whitespace-normal">
@@ -38,7 +31,7 @@ const t = useTranslations(lang);
     <nav class="flex md:hidden justify-self-start md:justify-self-center">
       <button
         class="btn btn-ghost btn-circle cursor-pointer"
-        id="mobile-menu-toggle"
+        id="mobile-menu-toggle-fixed"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,16 +51,17 @@ const t = useTranslations(lang);
 
     <div class={`block sm:hidden`}></div>
 
-    <LanguageSelector />
+    <LanguageSelector fixed={true} />
   </div>
-  <!-- mobile navbar -->
+
+</header>
+    <!-- mobile navbar -->
   <div
-    class="h-lvh w-lvw top-0 fixed bg-gray-900/50 z-50 hidden"
-    id="nav-mobile"
+    class="h-lvh w-lvw top-0 right-0 fixed bg-gray-900/50 z-50 hidden"
+    id="nav-mobile-fixed"
   >
     <div
       class="w-3/4 h-lvh bg-background transition-transform duration-300 -translate-x-full flex flex-col"
-      id="nav-mobile"
     >
       <nav class="gap-4 flex flex-col pt-40 px-10 grow-1">
         <a href={`/${lang}#start`} class="anim-underline">{t("nav.home")}</a>
@@ -81,21 +75,19 @@ const t = useTranslations(lang);
         {t("nav.clickToClose")}
       </p>
     </div>
-    <div class="w-1/4 h-lvh absolute right-0 top-0" id="exit-mobile-nav"></div>
+    <div class="w-1/4 h-lvh absolute right-0 top-0" id="exit-mobile-nav-fixed"></div>
   </div>
-</header>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("mobile-menu-toggle");
-    const navMobile = document.getElementById("nav-mobile");
-    const exitZone = document.getElementById("exit-mobile-nav");
-    const links = navMobile?.querySelectorAll("a") as NodeListOf<HTMLElement>;
+    const toggleBtn = document.getElementById("mobile-menu-toggle-fixed");
+    const navMobile = document.getElementById("nav-mobile-fixed");
+    const exitZone = document.getElementById("exit-mobile-nav-fixed");
     const navMobileContent = navMobile?.firstElementChild;
+
     let scrollY = 0;
 
     const closeNav = () => {
-      // document.body.classList.remove("overflow-hidden");
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.left = '';
@@ -115,10 +107,6 @@ const t = useTranslations(lang);
 
     exitZone?.addEventListener("click", closeNav);
 
-    links?.forEach((link: HTMLElement) => {
-      link.addEventListener("click", closeNav);
-    });
-
     toggleBtn?.addEventListener("click", () => {
       // document.body.classList.add("overflow-hidden");
       scrollY = window.scrollY;
@@ -131,5 +119,21 @@ const t = useTranslations(lang);
         navMobileContent?.classList.remove("-translate-x-full");
       }, 100);
     });
+
+    const header = document.getElementById("fixed-header");
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 300) {
+        header?.classList.remove("-translate-y-full");
+        header?.classList.add("translate-y-0");
+      } else {
+        header?.classList.remove("translate-y-0");
+        header?.classList.add("-translate-y-full");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
   });
 </script>

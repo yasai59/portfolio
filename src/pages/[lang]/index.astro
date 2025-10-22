@@ -11,6 +11,7 @@ import "../../styles/global.css";
 
 import type { GetStaticPaths } from "astro";
 import BlogIntroSection from "../../sections/BlogIntroSection.astro";
+import HeaderFixed from "../../components/HeaderFixed.astro";
 
 export const getStaticPaths = (() => {
   let paths = [];
@@ -23,7 +24,8 @@ export const getStaticPaths = (() => {
 ---
 
 <Layout title="Alejandro Vidal - Portfolio">
-  <div class="h-lvh flex flex-col">
+  <HeaderFixed />
+  <div class="h-lvh flex flex-col overflow-hidden" id="start">
     <Header showName={false} />
     <HeroSection />
   </div>

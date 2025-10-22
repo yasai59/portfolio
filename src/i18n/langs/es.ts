@@ -1,6 +1,9 @@
 import en from './en.js';
 
 const es: typeof en = {
+  "meta.title": "Alejandro Vidal Casado - Desarrollador Web & Estudiante",
+  "meta.description": "¡Bienvenido a mi página personal! Soy Alejandro Vidal Casado, un apasionado desarrollador web y estudiante en la FIB. Explora mis proyectos, blog y conoce más sobre mí.",
+  "meta.bannerAlt": "Imagen de banner que muestra a Bob con mi nombre al lado.",
   "general.name": "Alejandro",
   "general.surname": "Vidal Casado",
   "general.firstSurname": "Vidal",

@@ -14,15 +14,15 @@ const posts = (await getCollection("blog")).filter((p: any) => p.slug.startsWith
 
 <section class="container-force m-auto" id="blog">
   <SectionTitle>{t("blog.title")}</SectionTitle>
-  <div class="flex gap-2 flex-wrap mt-10 mb-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-5 gap-15 pb-5">
     {
       posts.map((post) => (
-        <div class="w-100">
+        <div class="grid">
           <BlogPreview post={post as any} />
         </div>
       ))
     }
   </div>
-  <a href={`/${lang}/blog`} class="anim-underline">{t("blog.seeMore")}</a>
+  <a href={`/${lang}/blog`} class="anim-underline w-content">{t("blog.seeMore")}</a>
 </section>
 

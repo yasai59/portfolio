@@ -92,7 +92,7 @@ console.warn('Warning') // [!code warning]
  
 ## Images
 
-![alt_text](https://w.wallhaven.cc/full/5g/wallhaven-5g22q5.png "jeje2")
+![alt_text](https://w.wallhaven.cc/full/5g/wallhaven-5g22q5.png "text on cursor hover")
 
 ## Text
 

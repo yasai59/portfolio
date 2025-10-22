@@ -6,9 +6,15 @@ import { getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url) ?? "";
 const [, , ...rest] = Astro.url.pathname.split("/");
 const restString = rest.join("/");
+
+interface Props {
+  fixed?: boolean;
+}
+
+const { fixed = false } = Astro.props;
 ---
 
-<div class="relative justify-self-end" id="lng-selector">
+<div class="relative justify-self-end" id={fixed ? "lng-selector-fixed" : "lng-selector"}>
   <div
     class="flex items-center gap-2 p-3 cursor-pointer select-none"
     id="lang-btn"
@@ -18,7 +24,13 @@ const restString = rest.join("/");
       class="transition-transform duration-300 text-2xl"
       id="lng-chev"
     />
-    {languages[lang]}
+    <div class="flex items-center gap-1 break-keep [line-break:strict] break-words whitespace-normal">
+      <Icon
+        name="material-symbols:language"
+        class="text-xl text-secondary"
+      />
+      {languages[lang]}
+    </div>
   </div>
   <div
     class="flex-col absolute hidden border-2 border-secondary border-lg bg-black p-3 z-10 rounded-lg"
@@ -40,14 +52,26 @@ const restString = rest.join("/");
   </div>
 </div>
 <script>
-  const langBtn = document.getElementById("lang-btn");
-  const langMenu = document.getElementById("lang-menu");
-  const langChev = document.getElementById("lng-chev");
+  const langBtn1 = document.querySelector("#lng-selector-fixed #lang-btn");
+  const langMenu1= document.querySelector("#lng-selector-fixed #lang-menu");
+  const langChev1 = document.querySelector("#lng-selector-fixed #lng-chev");
+
+  const langBtn2 = document.querySelector("#lng-selector #lang-btn");
+  const langMenu2= document.querySelector("#lng-selector #lang-menu");
+  const langChev2 = document.querySelector("#lng-selector #lng-chev");
+
+
   document.addEventListener("DOMContentLoaded", () => {
-    langBtn?.addEventListener("click", () => {
-      langMenu?.classList.toggle("hidden");
-      langMenu?.classList.toggle("flex");
-      langChev?.classList.toggle("rotate-180");
+    langBtn1?.addEventListener("click", () => {
+      langMenu1?.classList.toggle("hidden");
+      langMenu1?.classList.toggle("flex");
+      langChev1?.classList.toggle("rotate-180");
+    });
+
+    langBtn2?.addEventListener("click", () => {
+      langMenu2?.classList.toggle("hidden");
+      langMenu2?.classList.toggle("flex");
+      langChev2?.classList.toggle("rotate-180");
     });
   });
 </script>

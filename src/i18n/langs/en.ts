@@ -1,4 +1,7 @@
 const en = {
+  "meta.title": "Alejandro Vidal Casado - Web Developer & Student",
+  "meta.description": "Welcome to my personal website! I'm Alejandro Vidal Casado, a passionate web developer and student at FIB. Explore my projects, blog, and learn more about me.",
+  "meta.bannerAlt": "Banner image showing Bob with my name at the side.",
   "general.name": "Alejandro",
   "general.surname": "Vidal Casado",
   "general.firstSurname": "Vidal",

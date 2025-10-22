@@ -1,6 +1,10 @@
 import en from "./en.js";
 
 const jp: typeof en = {
+  "meta.title": "アレハンドロ ヴィダル カサド - ウェブ開発者 & 大学生",
+  "meta.description":
+    "私の個人ウェブサイトへようこそ！私はアレハンドロ ヴィダル カサド、情熱的なウェブ開発者とFIBの学生です。私のプロジェクト、ブログを探索して、私についてもっと知ってください。",
+  "meta.bannerAlt": "ボブの隣に私の名前がある画像。",
   "general.name": "アレハンドロ",
   "general.surname": "ヴィダル カサド",
   "general.firstSurname": "ヴィダル",
