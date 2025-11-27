@@ -1,0 +1,24 @@
+---
+interface Props {
+  command: string;
+  animate?: boolean;
+}
+
+const { command, animate = false } = Astro.props;
+---
+
+<div>
+  <div class="flex gap-2 text-secondary/70 font-bold">
+    <span>➜</span> 
+    <span>~</span> 
+    <span class="text-primary">{command}</span>
+  </div>
+
+  <div class="mt-2 text-secondary leading-relaxed font-medium">
+    <slot />
+  </div>
+
+  {animate && (
+    <span class="inline-block w-2.5 h-5 bg-secondary align-middle animate-pulse ml-1"></span>
+  )}
+</div>

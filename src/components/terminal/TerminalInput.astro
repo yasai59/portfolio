@@ -1,0 +1,50 @@
+---
+// src/components/TerminalInput.astro
+---
+
+<div class="flex gap-2 text-secondary/70 font-bold font-mono group cursor-text w-full" id="terminal-wrapper-input">
+  <span class="select-none shrink-0">➜</span>
+  <span class="select-none shrink-0">~</span>
+
+  <div class="relative flex-1 flex items-center overflow-hidden">
+    <span id="terminal-display" class="text-primary font-medium whitespace-pre min-h-[1.5em]"></span>
+
+    <span id="terminal-cursor" class="inline-block w-2.5 h-5 bg-secondary align-middle animate-pulse ml-0.5 shrink-0"></span>
+
+    <input
+      type="text"
+      id="terminal-hidden-input"
+      class="absolute top-0 left-0 w-full h-full opacity-0 cursor-text bg-transparent border-none outline-none z-10 p-0 m-0"
+      autocomplete="off"
+      spellcheck="false"
+      aria-label="Terminal input"
+    />
+  </div>
+</div>
+
+<script>
+  // SOLO LÓGICA VISUAL (ESPEJO)
+  const wrapper = document.getElementById('terminal-wrapper-input');
+  const input = document.getElementById('terminal-hidden-input') as HTMLInputElement;
+  const display = document.getElementById('terminal-display');
+  const cursor = document.getElementById('terminal-cursor');
+
+  if (input && display && cursor && wrapper) {
+    
+    // Enfocar al hacer click
+    wrapper.addEventListener('click', () => input.focus());
+
+    // Sincronizar texto (Espejo)
+    input.addEventListener('input', () => {
+      display.textContent = input.value;
+      
+      // Reiniciar animación cursor
+      cursor.classList.remove('animate-pulse');
+      void cursor.offsetWidth; 
+      setTimeout(() => cursor.classList.add('animate-pulse'), 100);
+    });
+    
+    // ¡IMPORTANTE!: AQUÍ YA NO HAY addEventListener('keydown')
+    // Esa lógica se mueve al padre (Wrapper)
+  }
+</script>

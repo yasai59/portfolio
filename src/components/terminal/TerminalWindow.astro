@@ -1,0 +1,69 @@
+---
+interface Props {
+  class?: string;
+  user?: string;
+}
+
+const { class: className, user = "alejandro@portfolio" } = Astro.props;
+---
+
+<div class:list={[
+  "js-terminal-window relative flex flex-col rounded-xl bg-black/90 border-2 border-secondary/40 shadow-2xl cursor-text min-h-[400px] lg:min-h-0 lg:h-full transition-colors duration-300",
+  className
+]}>
+  
+  <div class="relative z-20 bg-neutral-900/90 backdrop-blur-sm px-4 py-3 flex items-center gap-2 border-b-2 border-secondary/40 shrink-0 rounded-t-xl transition-colors duration-300">
+    <div class="w-3 h-3 rounded-full bg-red-500/90 border border-black/20"></div>
+    <div class="w-3 h-3 rounded-full bg-yellow-500/90 border border-black/20"></div>
+    <div class="w-3 h-3 rounded-full bg-green-500/90 border border-black/20"></div>
+    
+    <div class="ml-4 text-xs text-secondary/80 font-mono tracking-wide font-bold">
+      zsh — {user}
+    </div>
+  </div>
+  
+  <div class="relative flex-1 w-full overflow-hidden rounded-b-xl">
+    <div id="terminal-body" class="absolute bottom-0 left-0 w-full max-h-full p-6 font-mono text-sm md:text-base space-y-5 text-secondary flex flex-col justify-end">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  const terminals = document.querySelectorAll('.js-terminal-window');
+
+  terminals.forEach(terminal => {
+    const input = terminal.querySelector('input');
+    const header = terminal.querySelector('.border-b-2');
+
+    if (input) {
+      terminal.addEventListener('click', (event) => {
+        const selection = window.getSelection();
+        if (selection && selection.toString().length > 0) return;
+        input.focus();
+      });
+
+      input.addEventListener('focus', () => {
+        terminal.classList.remove('border-secondary/40');
+        terminal.classList.add('border-primary/50');
+        terminal.classList.add('shadow-primary/20');
+        
+        if (header) {
+          header.classList.remove('border-secondary/40');
+          header.classList.add('border-primary/50');
+        }
+      });
+
+      input.addEventListener('blur', () => {
+        terminal.classList.remove('border-primary');
+        terminal.classList.remove('shadow-primary/20');
+        terminal.classList.add('border-secondary/40');
+
+        if (header) {
+          header.classList.remove('border-primary/50');
+          header.classList.add('border-secondary/40');
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,53 @@
+---
+import TerminalLine from "./TerminalLine.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<template id="tpl-cmd-whoami">
+  <TerminalLine command="whoami">
+    <span set:html={t("about.terminal.whoami")} />
+  </TerminalLine>
+</template>
+
+<template id="tpl-cmd-help">
+  <TerminalLine command="help">
+    <div class="text-secondary mb-2">{t("about.terminal.help.title")}</div>
+    <div class="grid grid-cols-2 gap-x-4 gap-y-1 max-w-xs text-sm">
+      <span><span class="text-primary font-bold">about</span> <span class="text-secondary/50">-</span> <span class="text-secondary/80">{t("about.terminal.help.about")}</span></span>
+      <span><span class="text-primary font-bold">skills</span> <span class="text-secondary/50">-</span> <span class="text-secondary/80">{t("about.terminal.help.skills")}</span></span>
+      <span><span class="text-primary font-bold">contact</span> <span class="text-secondary/50">-</span> <span class="text-secondary/80">{t("about.terminal.help.contact")}</span></span>
+      <span><span class="text-primary font-bold">clear</span> <span class="text-secondary/50">-</span> <span class="text-secondary/80">{t("about.terminal.help.clear")}</span></span>
+    </div>
+  </TerminalLine>
+</template>
+
+<template id="tpl-cmd-about">
+  <TerminalLine command="about">
+     <span set:html={t("about.terminal.about")} />
+  </TerminalLine>
+</template>
+
+<template id="tpl-cmd-skills">
+  <TerminalLine command="skills">
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-outline text-primary border-secondary/50">React</span>
+      <span class="badge badge-outline text-primary border-secondary/50">Astro</span>
+      <span class="badge badge-outline text-primary border-secondary/50">Node.js</span>
+    </div>
+  </TerminalLine>
+</template>
+
+<template id="tpl-cmd-contact">
+  <TerminalLine command="contact">
+    <span set:html={t("about.terminal.contact")} />
+  </TerminalLine>
+</template>
+
+<template id="tpl-cmd-error">
+  <TerminalLine command="error">
+    <span class="text-red-400 font-bold">{t("about.terminal.error.prefix")}</span> {t("about.terminal.error.suffix")} <span class="text-primary font-bold">help</span>.
+  </TerminalLine>
+</template>

@@ -1,0 +1,95 @@
+---
+import TerminalWindow from "./TerminalWindow.astro"
+import TerminalInput from "./TerminalInput.astro"
+import TerminalTemplates from "./TerminalTemplates.astro";
+---
+
+<div class="lg:col-span-7 w-full">
+  <TerminalWindow class="h-full">
+    
+    <div id="terminal-output"></div>
+
+    <TerminalInput/>
+  </TerminalWindow>
+
+  <TerminalTemplates/>
+</div>
+
+<script>
+  const COMMAND_MAPPING = {
+    'help': 'tpl-cmd-help',
+    'about': 'tpl-cmd-about',
+    'skills': 'tpl-cmd-skills',
+    'contact': 'tpl-cmd-contact',
+    'whoami': 'tpl-cmd-whoami',
+  };
+
+  let history = [
+    { command: 'whoami', templateId: 'tpl-cmd-whoami', isError: false },
+    { command: 'about', templateId: 'tpl-cmd-about', isError: false },
+    { command: 'help', templateId: 'tpl-cmd-help', isError: false }
+  ];
+
+  const input = document.getElementById('terminal-hidden-input') as HTMLInputElement;
+  const output = document.getElementById('terminal-output');
+  const displaySpan = document.getElementById('terminal-display');
+
+  const renderHistory = () => {
+    if (!output) return;
+
+    output.innerHTML = '';
+
+    const historySlice = history.slice(-3);
+
+    historySlice.forEach(entry => {
+      const template = document.getElementById(entry.templateId) as HTMLTemplateElement;
+      
+      if (template) {
+        const clone = template.content.cloneNode(true) as DocumentFragment;
+
+        if (entry.isError) {
+           const commandSpan = clone.querySelector('div > span.text-primary');
+           if (commandSpan) commandSpan.textContent = entry.command;
+        }
+
+        output.appendChild(clone);
+      }
+    });
+  };
+
+  if (input && output) {
+    renderHistory();
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const rawCommand = input.value.trim().toLowerCase();
+
+        if (rawCommand === 'clear') {
+          history = []; 
+          renderHistory();
+        } 
+        else if (rawCommand !== "") {
+          // @ts-ignore
+          let templateId = COMMAND_MAPPING[rawCommand];
+          let isError = false;
+
+          if (!templateId) {
+            templateId = 'tpl-cmd-error';
+            isError = true;
+          }
+
+          history.push({ 
+            command: rawCommand, 
+            templateId: templateId,
+            isError: isError
+          });
+
+          renderHistory();
+        }
+
+        input.value = '';
+        if (displaySpan) displaySpan.textContent = '';
+      }
+    });
+  }
+</script>
