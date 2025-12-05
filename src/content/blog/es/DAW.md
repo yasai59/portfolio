@@ -27,7 +27,7 @@ Sobra decir que también aprendí a **desplegar mis aplicaciones** en diferentes
 - Mejor expediente académico de Cataluña
 
 ![Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña](/blog/DAW/exellence_award.png)
-Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña
+*Yo con mi tutora recogiendo el premio del mejor expdiente académico de Cataluña*
 
 ### Tecnologias y conceptos aprendidos
 
