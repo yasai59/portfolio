@@ -59,7 +59,21 @@ const ca: typeof en = {
   // CONTACT & FOOTER
   "contact.title": "Contacte",
   "footer.contact.text": "Si voldries contactar amb mi, pots fer-ho des d'aquí",
-  "footer.title": "Desenvolupador Web <br/> & Estudiant"
+  "footer.title": "Desenvolupador Web <br/> & Estudiant",
+  "footer.privacy": "Política de Privacitat",
+
+  // PRIVACY POLICY
+  "privacy.title": "Política de Privacitat",
+  "privacy.intro": "Aquesta política de privacitat descriu com aquest lloc web gestiona la informació dels visitants.",
+  "privacy.analytics.title": "Analítica",
+  "privacy.analytics.description": "Aquest lloc web utilitza <a href='https://umami.is/' target='_blank' class='text-primary font-bold hover:underline'>Umami</a> per recopilar estadístiques d'ús anònimes. Umami és una eina d'analítica de codi obert centrada en la privacitat que compleix amb el RGPD sense requerir consentiment de cookies.",
+  "privacy.analytics.data": "Les dades recopilades inclouen: pàgines visitades, font de referència, tipus de dispositiu, navegador, sistema operatiu i país d'origen. Totes les dades són agregades i completament anònimes — no es poden vincular a cap individu.",
+  "privacy.data.title": "Ús de les Dades",
+  "privacy.data.description": "Les estadístiques recopilades s'utilitzen únicament per comprendre com els visitants interactuen amb aquest lloc web i millorar el seu contingut. Aquestes dades <strong>mai es venen, comparteixen ni s'utilitzen amb fins comercials</strong>.",
+  "privacy.cookies.title": "Cookies",
+  "privacy.cookies.description": "Umami utilitza únicament una cookie de primera part per a analítica. No s'utilitzen cookies de rastreig de tercers en aquest lloc web.",
+  "privacy.rights.title": "Els Teus Drets",
+  "privacy.rights.description": "Atès que totes les dades recopilades són anònimes i no es poden vincular a individus, no hi ha dades personals per accedir, modificar o eliminar. Si tens alguna pregunta, no dubtis a <a href='mailto:contacto@alejandrovidal.dev' class='text-primary font-bold hover:underline'>contactar-me</a>."
 };
 
 export default ca;

@@ -59,7 +59,21 @@ const es: typeof en = {
   // CONTACT & FOOTER
   "contact.title": "Contacto",
   "footer.contact.text": "Si te gustaría ponerte en contacto conmigo, puedes hacerlo desde aquí",
-  "footer.title": "Desarrollador Web <br/> & Estudiante"
+  "footer.title": "Desarrollador Web <br/> & Estudiante",
+  "footer.privacy": "Política de Privacidad",
+
+  // PRIVACY POLICY
+  "privacy.title": "Política de Privacidad",
+  "privacy.intro": "Esta política de privacidad describe cómo este sitio web gestiona la información de los visitantes.",
+  "privacy.analytics.title": "Analítica",
+  "privacy.analytics.description": "Este sitio web utiliza <a href='https://umami.is/' target='_blank' class='text-primary font-bold hover:underline'>Umami</a> para recopilar estadísticas de uso anónimas. Umami es una herramienta de analítica de código abierto centrada en la privacidad que cumple con el RGPD sin requerir consentimiento de cookies.",
+  "privacy.analytics.data": "Los datos recopilados incluyen: páginas visitadas, fuente de referencia, tipo de dispositivo, navegador, sistema operativo y país de origen. Todos los datos son agregados y completamente anónimos — no pueden vincularse a ningún individuo.",
+  "privacy.data.title": "Uso de los Datos",
+  "privacy.data.description": "Las estadísticas recopiladas se utilizan únicamente para comprender cómo los visitantes interactúan con este sitio web y mejorar su contenido. Estos datos <strong>nunca se venden, comparten ni se utilizan con fines comerciales</strong>.",
+  "privacy.cookies.title": "Cookies",
+  "privacy.cookies.description": "Umami utiliza únicamente una cookie de primera parte para analítica. No se utilizan cookies de rastreo de terceros en este sitio web.",
+  "privacy.rights.title": "Tus Derechos",
+  "privacy.rights.description": "Dado que todos los datos recopilados son anónimos y no pueden vincularse a individuos, no hay datos personales que acceder, modificar o eliminar. Si tienes alguna pregunta, no dudes en <a href='mailto:contacto@alejandrovidal.dev' class='text-primary font-bold hover:underline'>contactarme</a>."
 };
 
 export default es;

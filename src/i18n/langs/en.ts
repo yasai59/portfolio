@@ -57,7 +57,21 @@ const en = {
   // CONTACT & FOOTER
   "contact.title": "Contact",
   "footer.contact.text": "If you would like to get in touch with me, you can reach me from here",
-  "footer.title": "Web Developer <br/> & Student"
+  "footer.title": "Web Developer <br/> & Student",
+  "footer.privacy": "Privacy Policy",
+
+  // PRIVACY POLICY
+  "privacy.title": "Privacy Policy",
+  "privacy.intro": "This privacy policy describes how this website handles visitor information.",
+  "privacy.analytics.title": "Analytics",
+  "privacy.analytics.description": "This website uses <a href='https://umami.is/' target='_blank' class='text-primary font-bold hover:underline'>Umami</a> to collect anonymous usage statistics. Umami is a privacy-focused, open-source analytics tool that complies with GDPR without requiring cookie consent.",
+  "privacy.analytics.data": "The data collected includes: pages visited, referrer source, device type, browser, operating system, and country of origin. All data is aggregated and completely anonymous — it cannot be linked to any individual.",
+  "privacy.data.title": "Data Usage",
+  "privacy.data.description": "The statistics collected are used solely to understand how visitors interact with this website and to improve its content. This data is <strong>never sold, shared, or used for commercial purposes</strong>.",
+  "privacy.cookies.title": "Cookies",
+  "privacy.cookies.description": "Umami uses only a single first-party cookie for analytics. No third-party tracking cookies are used on this website.",
+  "privacy.rights.title": "Your Rights",
+  "privacy.rights.description": "Since all collected data is anonymous and cannot be linked to individuals, there is no personal data to access, modify, or delete. If you have any questions, feel free to <a href='mailto:contacto@alejandrovidal.dev' class='text-primary font-bold hover:underline'>contact me</a>."
 };
 
 export default en;

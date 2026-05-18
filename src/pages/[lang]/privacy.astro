@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
+import { languages } from "../../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import type { GetStaticPaths } from "astro";
+import HeaderFixed from "../../components/HeaderFixed.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const getStaticPaths = (() => {
+  return Object.keys(languages).map((key) => ({ params: { lang: key } }));
+}) satisfies GetStaticPaths;
+---
+
+<Layout title={t("privacy.title")}>
+  <HeaderFixed />
+  <div class="min-h-lvh overflow-hidden">
+    <Header />
+    <div class="container m-auto pb-30">
+      <SectionTitle>{t("privacy.title")}</SectionTitle>
+      <div class="max-w-3xl">
+        <p class="text-secondary mb-10">{t("privacy.intro")}</p>
+
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-3 text-primary">{t("privacy.analytics.title")}</h3>
+          <p class="text-secondary mb-3" set:html={t("privacy.analytics.description")} />
+          <p class="text-secondary" set:html={t("privacy.analytics.data")} />
+        </div>
+
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-3 text-primary">{t("privacy.data.title")}</h3>
+          <p class="text-secondary" set:html={t("privacy.data.description")} />
+        </div>
+
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-3 text-primary">{t("privacy.cookies.title")}</h3>
+          <p class="text-secondary" set:html={t("privacy.cookies.description")} />
+        </div>
+
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-3 text-primary">{t("privacy.rights.title")}</h3>
+          <p class="text-secondary" set:html={t("privacy.rights.description")} />
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</Layout>

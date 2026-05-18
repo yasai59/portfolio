@@ -60,6 +60,20 @@ const jp: typeof en = {
   "contact.title": "連絡",
   "footer.contact.text": "私に連絡したかったら次の選択肢を使ってください",
   "footer.title": "ウェブ開発者 <br/> & 大学生",
+  "footer.privacy": "プライバシーポリシー",
+
+  // PRIVACY POLICY
+  "privacy.title": "プライバシーポリシー",
+  "privacy.intro": "このプライバシーポリシーは、当ウェブサイトが訪問者の情報をどのように扱うかを説明します。",
+  "privacy.analytics.title": "アナリティクス",
+  "privacy.analytics.description": "当ウェブサイトは匿名の使用統計を収集するために<a href='https://umami.is/' target='_blank' class='text-primary font-bold hover:underline'>Umami</a>を使用しています。Umamiはプライバシーに焦点を当てたオープンソースの分析ツールで、クッキーの同意なしにGDPRに準拠しています。",
+  "privacy.analytics.data": "収集されるデータには、訪問ページ、参照元、デバイスタイプ、ブラウザ、オペレーティングシステム、出身国が含まれます。すべてのデータは集約され、完全に匿名です — 個人に関連付けることはできません。",
+  "privacy.data.title": "データの利用",
+  "privacy.data.description": "収集された統計は、訪問者が当ウェブサイトとどのように相互作用しているかを理解し、コンテンツを改善するためのみに使用されます。このデータは<strong>決して販売、共有、または商業目的で使用されることはありません</strong>。",
+  "privacy.cookies.title": "クッキー",
+  "privacy.cookies.description": "Umamiはアナリティクス用に単一のファーストパーティクッキーのみを使用します。当ウェブサイトではサードパーティのトラッキングクッキーは使用していません。",
+  "privacy.rights.title": "あなたの権利",
+  "privacy.rights.description": "収集されたすべてのデータは匿名であり、個人に関連付けることができないため、アクセス、変更、または削除する個人データはありません。ご質問がある場合は、お気軽に<a href='mailto:contacto@alejandrovidal.dev' class='text-primary font-bold hover:underline'>お問い合わせください</a>。"
 };
 
 export default jp;
